@@ -3,6 +3,17 @@
 // Ecrire les mois de l'année en français
 $dateGmt = gmdate('Y-m-d H:i');
 
+function random_1($car) {
+    $string = "";
+    $chaine = "123456789abcdefghijklmnpqrstuvwxy";
+    srand((double)microtime()*1000000);
+    for($i=0; $i<$car; $i++) {
+        $string .= $chaine[rand()%strlen($chaine)];
+    }
+    return $string;
+}
+
+
 //Pourcentage
 if(!function_exists('pourcentage')){
     function pourcentage($total, $nb){

@@ -25,7 +25,70 @@
 <link href="<?=$asset?>/plugins/sweetalert/sweet-alert.css" rel="stylesheet" />
 <link href="<?=$asset?>/plugins/lity/dist/lity.css" rel="stylesheet"/>
 <link rel="stylesheet" href="<?=$asset?>/plugins/ani/animate.css"/>
+<link rel="stylesheet" href="<?=$asset?>/plugins/intltelinput/css/intlTelInput.min.css"/>
 <style>
+
+ul.list{
+    height: 170px !important;
+    overflow-y: scroll !important;
+    width: 100% !important;
+}
+:focus {
+    outline: none !important;
+}
+.iti{
+    width: 100% !important;
+}
+.nice-select, .nice-select .list li.selected:hover, .nice-select .list li:hover{
+    background : inherit !important;
+    width : 100% !important;
+    color : #6c757d !important;
+}
+.nice-select:after {
+    border-color: #6c757d !important;
+}
+.btn-inscript{
+    background: #f84909;
+    border: 1px solid #f84909 !important;
+    border-radius: 6px;
+    padding: 5px 20px;
+    color: #fff;
+}
+.btn-inscript:hover{
+    background: #fff;
+    color: #f84909;
+}
+.register-form-content .register-form-wrap:before {
+    background-color: #008000 !important;
+}
+
+.loader-btn {
+    display: inline-block;
+    width: 0.9rem;
+    height: 0.9rem;
+    vertical-align: middle;
+    border: 0.2em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spinner-border .75s linear infinite;
+    animation: spinner-border .75s linear infinite;
+    align-self: center;
+}
+
+.w100{
+    width: 100% !important;
+}
+.w87{
+    width: 87px !important;
+}
+.text-green{
+    color: #008000;
+    font-weight: bold;
+}
+
+
+
+
 #slider-area .single-slide-wrap, .gallery-gird .col-lg-3 .single-gallery-item {
     background-position: inherit !important;
 }
@@ -51,7 +114,7 @@
     border: 2px solid #ced4da !important;
 }
 
-.couverture {
+.pieceDiv, .photoDiv {
     position: relative;
     display: flex;
     align-items: center;
@@ -64,7 +127,7 @@
     background: no-repeat center;
     background-size: contain;
 }
-.couverture.is-active {
+.pieceDiv.is-active,.photoDiv.is-active {
     background-color: #eff7fa;
 }
 
@@ -301,8 +364,12 @@
 .font-21{
     font-size:21px !important;
 }
+@media(max-width: 767px) {
+    .offset-4 {
+        margin-left: 0 !important;
+    }
 
-
+}
 
 </style>
 </head>

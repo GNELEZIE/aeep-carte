@@ -95,6 +95,7 @@
 <script src="<?=$asset?>/js/custom.js"></script>
 <script src="<?=$asset?>/plugins/sweetalert/sweet-alert.min.js"></script>
 <script src="<?=$asset?>/plugins/lity/dist/lity.js"></script>
+<script src="<?=$asset?>/plugins/intltelinput/js/intlTelInput.min.js"></script>
 
 
 
