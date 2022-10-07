@@ -8,6 +8,9 @@ include_once "function/mailing.php";
 include_once "function/function.php";
 include_once "function/detectdevice/Mobile_Detect.php";
 include_once "function/detectdevice/detect.php";
+require_once 'function/cinetpay/src/new-guichet.php';
+//include_once "function/cinetpay/notify/notify.php";
+//include_once "function/cinetpay/return/return.php";
 
 
 //Include Connexion

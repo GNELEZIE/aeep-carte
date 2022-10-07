@@ -8,7 +8,7 @@ require_once __DIR__ . '/src/new-guichet.php';
 include('marchand.php');
 include('commande.php');
 
-// La class gère la table "Commande"( A titre d'exemple)
+// La class gère la table "Commande"(A titre d'exemple)
 $commande = new Commande();
 try {
     if(isset($_POST['valider']))

@@ -1,8 +1,8 @@
 <?php
-    require_once __DIR__ . '/../src/new-guichet.php';
-    require_once __DIR__ . '/../commande.php';
-    include('../marchand.php');
+    require_once $function.'/cinetpay/src/new-guichet.php';
+    require_once $function.'/cinetpay/commande.php';
 
+     include_once $function.'/cinetpay/marchand.php';
 if (isset($_POST['transaction_id']) || isset($_POST['token'])) {
 
     $commande = new Commande();
@@ -22,11 +22,12 @@ if (isset($_POST['transaction_id']) || isset($_POST['token'])) {
         // redirection vers une page en fonction de l'état de la transaction
         if ($code == '00') {
             echo 'Felicitation, votre paiement a été effectué avec succès';
-            die();
+            header('location:' . $domaine .'/valide');
+//            header('Location: '.$commande->getCurrentUrl().'/');
         }
         else {
-           // header('Location: '.$commande->getCurrentUrl().'/');
-            echo 'Echec, votre paiement a échoué';
+            header('Location: '.$commande->getCurrentUrl().'/echec');
+//            echo 'Echec, votre paiement a échoué';
             die();
         }
 
