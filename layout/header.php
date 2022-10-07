@@ -150,9 +150,15 @@ ul.list{
 .file-input:focus {
     outline: none;
 }
-
-
-
+#footer-area .footer-widget .single-widget-wrap .footer-social-icons a i.fa{
+    border-radius: 50% !important;
+}
+#footer-area .footer-widget {
+    background-color: #2B2B2B !important;
+}
+#footer-area .footer-bottom {
+    background-color: #131313 !important;
+}
 
 
 
@@ -195,9 +201,11 @@ ul.list{
     margin-right: 0 !important;
 }
 #header-area .header-bottom-area.fixed .navbar-brand img, #header-area .header-bottom-area .main-menu .navbar-brand img {
-    width: 73px !important;
+    width: 150px !important;
 }
-
+#footer-area .footer-widget .single-widget-wrap .footer-about p {
+    color: #F5F5F5 !important;
+}
 
 .p-more{
     padding: 6px 17px !important;
@@ -368,6 +376,15 @@ ul.list{
     .offset-4 {
         margin-left: 0 !important;
     }
+    .register-form-wrap{
+        margin-top: 0 !important;
+    }
+    .register-form-content .register-form-wrap h3 {
+        font-size: 21px !important;
+        text-transform: inherit !important;
+        text-align: center !important;
+        line-height: 1.3 !important;
+    }
 
 }
 
@@ -381,7 +398,7 @@ ul.list{
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="main-menu navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="<?=$domaine?>">
+                        <a class="navbar-brand" href="https://aeep-pongala.com/">
                             <img src="<?=$asset?>/media/logos.png" alt="Logo" />
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menucontent" aria-controls="menucontent" aria-expanded="false">
@@ -390,13 +407,12 @@ ul.list{
 
                         <div class="collapse navbar-collapse" id="menucontent">
                             <ul class="navbar-nav ml-auto">
-                                <li class="nav-item <?php if($lien == 'home' || $lien == ''){echo 'active';} ;?>"><a class="nav-link" href="<?=$domaine?>">Accueil</a></li>
-                                <li class="nav-item <?php if($lien == 'actualite'){echo 'active';} ;?>"><a class="nav-link" href="<?=$domaine?>/actualite">Actualité</a></li>
-                                <li class="nav-item <?php if($lien == 'evenement'){echo 'active';} ;?>"><a class="nav-link" href="<?=$domaine?>/evenement">Evenement</a></li>
-                                <li class="nav-item <?php if($lien == 'offre-d-emplois'){echo 'active';} ;?>"><a class="nav-link" href="<?=$domaine?>/offre-d-emplois">Ofres d'emplois</a></li>
-                                <li class="nav-item <?php if($lien == 'galerie'){echo 'active';} ;?>"><a class="nav-link" href="<?=$domaine?>/galerie">Galerie</a></li>
-                                <li class="nav-item <?php if($lien == 'contact'){echo 'active';} ;?>"><a class="nav-link" href="<?=$domaine?>/contact">Contact</a></li>
-<!--                                <li class="nav-item --><?php //if($lien == 'inscription'){echo 'active';} ;?><!--"><a class="nav-link" href="--><?//=$domaine?><!--/inscription">Inscription</a></li>-->
+                                <li class="nav-item"><a class="nav-link" href="https://aeep-pongala.com/">Accueil</a></li>
+                                <li class="nav-item "><a class="nav-link" href="https://aeep-pongala.com/blog/">Actualité</a></li>
+                                <li class="nav-item "><a class="nav-link" href="https://aeep-pongala.com/courses/">Formation</a></li>
+                                <li class="nav-item "><a class="nav-link" href="https://aeep-pongala.com/contact/">Contact</a></li>
+                                <li class="nav-item "><a class="nav-link" href="https://aeep-pongala.com/galerie/">Galerie</a></li>
+
                             </ul>
                         </div>
                     </nav>

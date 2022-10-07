@@ -36,7 +36,7 @@ include_once $layout.'/header.php';
                         <div class="col-lg-10 m-auto">
                             <div class="register-form-content">
                                         <div class="register-form-wrap">
-                                            <h3>Inscription pour la carte membre</h3>
+                                            <h3>Inscription pour la carte membre de l'AEEP</h3>
                                             <div class="register-form">
                                                 <form method="post" id="formCarte" enctype="multipart/form-data">
                                                     <?php if(!empty($errors)){ ?>
