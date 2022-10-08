@@ -65,6 +65,21 @@ include_once $layout.'/header.php';
                                                     <div class="row">
                                                         <div class="col-12 col-sm-6">
                                                             <div class="form-group">
+                                                                <label for="dateN">Date de naissance <i class="required"></i></label>
+                                                                <input type="text" class="form-control input-style" id="dateN" name="dateN" placeholder="Date de naissance" required/>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12 col-sm-6">
+                                                            <div class="form-group">
+                                                                <label for="lieu">Lieu de naissance <i class="required"></i></label>
+                                                                <input type="text" class="form-control input-style" id="lieu" name="lieu" placeholder="Lieu de naissance" required/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12 col-sm-6">
+                                                            <div class="form-group">
                                                                 <label for="niveau">Niveau d'étude <i class="required"></i></label>
                                                                 <input type="text" class="form-control input-style" id="niveau" name="niveau" placeholder="Niveau d'étude" />
                                                             </div>
@@ -170,6 +185,37 @@ include_once $layout.'/header.php';
     </div>
 </section>
 <?php include_once $layout.'/footer.php';?>
+<script>
+$(document).ready(function(){
+    (function ($) {
+        $.fn.datepicker.dates['fr'] = {
+            days: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
+            daysShort: ["Dim.", "Lun.", "Mar.", "Mer.", "Jeu.", "Ven.", "Sam."],
+            daysMin: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
+            months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+            monthsShort: ["Janv.", "Févr.", "Mars", "Avril", "Mai", "Juin", "Juil.", "Août", "Sept.", "Oct.", "Nov.", "Déc."],
+            today: "Aujourd'hui",
+            monthsTitle: "Mois",
+            clear: "Effacer",
+            weekStart: 1,
+            format: "dd/mm/yyyy"
+        };
+    }(jQuery));
+
+    $('#dateN').datepicker({
+        language: 'fr',
+        orientation: 'bottom',
+        autoclose: true,
+        assumeNearbyYear: true,
+        showOnFocus: true,
+        format: 'dd/mm/yyyy',
+        weekStart: 1,
+        todayHighlight: true,
+        defaultViewDate: 'today'
+    });
+
+});
+</script>
 <script>
 
     var photoDiv = $('.photoDiv');
