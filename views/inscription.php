@@ -19,7 +19,7 @@ include_once $layout.'/header.php';
             <div class="col-lg-8 m-auto text-center">
                 <div class="page-title-content">
                     <h1 class="h2 pt-5">Carte de membre</h1>
-                    <p>Pour ceux qui ont déjà effectué l'inscription pour pouvez cliquer le bouton <strong>Verifier la disponibilité</strong> pour voir la disponibilté. </p>
+                    <p>Pour ceux qui ont déjà effectué l'inscription vous pouvez cliquer le bouton <strong>Verifier la disponibilité</strong> pour voir la disponibilté. </p>
                     <a href="<?=$domaine?>/verify" class="btn btn-inscript smooth-scroll">Verifier la disponibilité</a>
                 </div>
             </div>
