@@ -151,7 +151,9 @@ if(!function_exists('date_fr')){
 if(!function_exists('date_eng')){
     function date_eng($date){
         $dc = explode('/',$date);
-        $ac = $dc[2]; $mc = $dc[1]; $jc = $dc[0];
+        $ac = $dc[2]; 
+        $mc = $dc[1]; 
+        $jc = $dc[0];
         $dc = $ac.'-'.$mc.'-'.$jc;
         return $dc;
     }

@@ -7,7 +7,7 @@
                         <div class="widgei-body">
                             <div class="footer-about">
                                 <h4 class="widget-title m-0">A propos</h4>
-                                <p>L'association des Elèves et Etudiants du Pongala la seul association qui regroupe l'ensemble des Elèves et Etudiants du Pongala.</p>
+                                <p>L'association des Elèves et Etudiants du Pongala la seule association qui regroupe l'ensemble des Elèves et Etudiants du Pongala.</p>
                             </div>
                         </div>
                     </div>

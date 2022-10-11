@@ -19,7 +19,7 @@ include_once $layout.'/header.php';
             <div class="col-lg-8 m-auto text-center">
                 <div class="page-title-content">
                     <h1 class="h2 pt-5">Carte de membre</h1>
-                    <p>Pour ceux qui ont déjà effectué l'inscription pour pouvez cliquer le bouton <strong>Verifier la disponibilité</strong> pour voir la disponibilté. </p>
+                    <p>Pour ceux qui ont déjà effectué l'inscription vour pouvez cliquer le bouton <strong>Verifier la disponibilité</strong> pour voir la disponibilté. </p>
                     <a href="<?=$domaine?>/verify" class="btn btn-inscript smooth-scroll">Verifier la disponibilité</a>
                 </div>
             </div>
@@ -65,8 +65,8 @@ include_once $layout.'/header.php';
                                                     <div class="row">
                                                         <div class="col-12 col-sm-6">
                                                             <div class="form-group">
-                                                                <label for="dateN">Date de naissance <i class="required"></i></label>
-                                                                <input type="text" class="form-control input-style" id="dateN" name="dateN" placeholder="Date de naissance" required/>
+                                                                <label for="dat">Date de naissance <i class="required"></i></label>
+                                                                <input type="date" class="form-control input-style" id="dat" name="dat" placeholder="Date de naissance" required/>
                                                             </div>
                                                         </div>
 
@@ -197,7 +197,6 @@ $(document).ready(function(){
             today: "Aujourd'hui",
             monthsTitle: "Mois",
             clear: "Effacer",
-            weekStart: 1,
             format: "dd/mm/yyyy"
         };
     }(jQuery));

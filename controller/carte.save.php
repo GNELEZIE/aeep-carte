@@ -2,11 +2,12 @@
 
 if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myformkey'] == $_POST['formkey']){
     extract($_POST);
+  
 //function
     include_once $function."/cinetpay/marchand.php";
     include_once $function."/cinetpay/commande.php";
 
-    $dateNais = date_eng($_POST['dateN']);
+    $dateNais = $_POST['dat'];
     $nom =  htmlentities(trim(addslashes($nom)));
     $prenom =  htmlentities(trim(addslashes($prenom)));
     $niveau =  htmlentities(trim(addslashes($niveau)));

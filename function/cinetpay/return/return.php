@@ -24,12 +24,10 @@ if (isset($_POST['transaction_id']) || isset($_POST['token'])) {
         // redirection vers une page en fonction de l'état de la transaction
         if ($code == '00') {
             echo 'Felicitation, votre paiement a été effectué avec succès';
-            $updEt = $carte->updateEtat($propriete4,$etatValid,$save);
 //            header('Location: '.$commande->getCurrentUrl().'/');
         }
         else {
             header('Location: '.$commande->getCurrentUrl().'/echec');
-            $updEt = $carte->updateEtat($propriete4,$etatInValid,$save);
 //            echo 'Echec, votre paiement a échoué';
             die();
         }
