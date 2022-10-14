@@ -2,22 +2,31 @@
 
 if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myformkey'] == $_POST['formkey']){
     extract($_POST);
+  
 //function
     include_once $function."/cinetpay/marchand.php";
     include_once $function."/cinetpay/commande.php";
+
+    $dateNais = $_POST['dat'];
     $nom =  htmlentities(trim(addslashes($nom)));
     $prenom =  htmlentities(trim(addslashes($prenom)));
     $niveau =  htmlentities(trim(addslashes($niveau)));
+    $lieu =  htmlentities(trim(addslashes($lieu)));
     $village =  htmlentities(trim(addslashes($village)));
     $genre =  htmlentities(trim(addslashes($genre)));
     $phone =  htmlentities(trim(addslashes($phone)));
     $isoPhone =  htmlentities(trim(addslashes($isoPhone)));
     $dialPhone =  htmlentities(trim(addslashes($dialPhone)));
+    $villageName = village_name($village);
     $slug = create_slug($_POST['prenom']);
     $propriete1 ='prenom';
     $propriete2 ='iso_phone';
     $propriete3 ='dial_phone';
     $propriete4 ='phone';
+    $propriete5 ='etat';
+    $etatValid = 1;
+    $etatInValid = 2;
+
     $amount = 100;
     $currency = 'XOF';
     $description = 'La carte de membre AEEP';
@@ -60,7 +69,7 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
 if($verifPhone->rowCount() > 0){
     $errors['cart'] = 'Ce numéro est déjà inscrit pour la carte de membre AEEP !';
 }else{
-    $save = $carte->addCarte($dateGmt,$genre,$nom,$prenom,$slug,$isoPhone,$dialPhone,$phone,$niveau,$village,$piece,$photo);
+    $save = $carte->addCarte($dateGmt,$genre,$nom,$prenom,$slug,$dateNais,$lieu,$isoPhone,$dialPhone,$phone,$niveau,$village,$piece,$photo);
     if($save >0){
 
         $commande = new Commande();
@@ -82,9 +91,9 @@ if($verifPhone->rowCount() > 0){
          sur la facture de CinetPay(Supporte trois variables
          que vous nommez à votre convenance)*/
         $invoice_data = array(
-            "Data 1" => "Carte de membre AEEP",
-            "Auteur" => "Design by Gnelezie",
-            "Data 3" => ""
+            "Nom & Prénom" => $nom.' '.$prenom,
+            "Téléphone" => $dialPhone.' '.$phone,
+            "Village" => $villageName
         );
 
         //
@@ -124,6 +133,7 @@ if($verifPhone->rowCount() > 0){
             header('Location:'.$url);
 
         }
+
 
 
 //        header('location:' . $domaine .'/valide');

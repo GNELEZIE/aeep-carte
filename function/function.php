@@ -3,6 +3,33 @@
 // Ecrire les mois de l'année en français
 $dateGmt = gmdate('Y-m-d H:i');
 
+if(!function_exists('village_name')){
+    function village_name($villag){
+        $village_nom = array(
+            "1"=> "Blagounon",
+            "2"=> "Baya",
+            "3"=> "Gbalo",
+            "4"=> "Kasséré",
+            "5"=> "Kofré",
+            "6"=> "Koundin",
+            "7"=> "Lafi",
+            "8"=> "Landiougou",
+            "9"=> "Nonganan",
+            "10"=> "Pinvoro",
+            "11"=> "Tiasso",
+            "12"=> "Toungbeli",
+            "13"=> "Tomba",
+            "14"=> "Pongafré",
+            "15"=> "Sienrè",
+            "16"=> "Siomfan",
+            "17"=> "Yélé"
+        );
+
+        if(!$village_nom[$villag] ) return $villag;
+        else return $village_nom[$villag];
+
+    }
+}
 function random_1($car) {
     $string = "";
     $chaine = "123456789abcdefghijklmnpqrstuvwxy";
@@ -124,7 +151,9 @@ if(!function_exists('date_fr')){
 if(!function_exists('date_eng')){
     function date_eng($date){
         $dc = explode('/',$date);
-        $ac = $dc[2]; $mc = $dc[1]; $jc = $dc[0];
+        $ac = $dc[2]; 
+        $mc = $dc[1]; 
+        $jc = $dc[0];
         $dc = $ac.'-'.$mc.'-'.$jc;
         return $dc;
     }

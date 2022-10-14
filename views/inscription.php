@@ -19,7 +19,9 @@ include_once $layout.'/header.php';
             <div class="col-lg-8 m-auto text-center">
                 <div class="page-title-content">
                     <h1 class="h2 pt-5">Carte de membre</h1>
-                    <p>Pour ceux qui ont déjà effectué l'inscription vous pouvez cliquer le bouton <strong>Verifier la disponibilité</strong> pour voir la disponibilté. </p>
+                    <p>Pour ceux qui ont déjà effectué l'inscription vous pouvez 
+cliquer sur le bouton vérifier la disponibilité de ma carte pour vérifier la disponibilité de votre carte
+                       </p>
                     <a href="<?=$domaine?>/verify" class="btn btn-inscript smooth-scroll">Verifier la disponibilité</a>
                 </div>
             </div>
@@ -65,6 +67,21 @@ include_once $layout.'/header.php';
                                                     <div class="row">
                                                         <div class="col-12 col-sm-6">
                                                             <div class="form-group">
+                                                                <label for="dat">Date de naissance <i class="required"></i></label>
+                                                                <input type="date" class="form-control input-style" id="dat" name="dat" placeholder="Date de naissance" required/>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12 col-sm-6">
+                                                            <div class="form-group">
+                                                                <label for="lieu">Lieu de naissance <i class="required"></i></label>
+                                                                <input type="text" class="form-control input-style" id="lieu" name="lieu" placeholder="Lieu de naissance" required/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12 col-sm-6">
+                                                            <div class="form-group">
                                                                 <label for="niveau">Niveau d'étude <i class="required"></i></label>
                                                                 <input type="text" class="form-control input-style" id="niveau" name="niveau" placeholder="Niveau d'étude" />
                                                             </div>
@@ -77,21 +94,21 @@ include_once $layout.'/header.php';
                                                                     <option selected="">Categories</option>
                                                                     <option value="1">Blagounon</option>
                                                                     <option value="2">Baya</option>
-                                                                    <option value="3">Gbalo</option>
+                                                                    <option value="3">Gballo</option>
                                                                     <option value="4">Kasséré</option>
-                                                                    <option value="5">Kofré</option>
+                                                                    <option value="5">Koffre</option>
                                                                     <option value="6">Koundin</option>
                                                                     <option value="7">Lafi</option>
                                                                     <option value="8">Landiougou</option>
-                                                                    <option value="9">Nonganan</option>
+                                                                    <option value="9">Nongana</option>
                                                                     <option value="10">Pinvoro</option>
                                                                     <option value="11">Tiasso</option>
-                                                                    <option value="12">Toungbeli</option>
+                                                                    <option value="12">Toungboli</option>
                                                                     <option value="13">Tomba</option>
                                                                     <option value="14">Pongafré</option>
                                                                     <option value="15">Sienrè</option>
-                                                                    <option value="16">Siomfan</option>
-                                                                    <option value="17">Yélé</option>
+                                                                    <option value="16">Sionfan</option>
+                                                                    <option value="17">Yelle</option>
                                                                 </select>
 
                                                             </div>
@@ -170,6 +187,36 @@ include_once $layout.'/header.php';
     </div>
 </section>
 <?php include_once $layout.'/footer.php';?>
+<script>
+$(document).ready(function(){
+    (function ($) {
+        $.fn.datepicker.dates['fr'] = {
+            days: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
+            daysShort: ["Dim.", "Lun.", "Mar.", "Mer.", "Jeu.", "Ven.", "Sam."],
+            daysMin: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
+            months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+            monthsShort: ["Janv.", "Févr.", "Mars", "Avril", "Mai", "Juin", "Juil.", "Août", "Sept.", "Oct.", "Nov.", "Déc."],
+            today: "Aujourd'hui",
+            monthsTitle: "Mois",
+            clear: "Effacer",
+            format: "dd/mm/yyyy"
+        };
+    }(jQuery));
+
+    $('#dateN').datepicker({
+        language: 'fr',
+        orientation: 'bottom',
+        autoclose: true,
+        assumeNearbyYear: true,
+        showOnFocus: true,
+        format: 'dd/mm/yyyy',
+        weekStart: 1,
+        todayHighlight: true,
+        defaultViewDate: 'today'
+    });
+
+});
+</script>
 <script>
 
     var photoDiv = $('.photoDiv');

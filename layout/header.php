@@ -26,8 +26,11 @@
 <link href="<?=$asset?>/plugins/lity/dist/lity.css" rel="stylesheet"/>
 <link rel="stylesheet" href="<?=$asset?>/plugins/ani/animate.css"/>
 <link rel="stylesheet" href="<?=$asset?>/plugins/intltelinput/css/intlTelInput.min.css"/>
+<link rel="stylesheet" href="<?=$asset?>/plugins/bootstrap-datepicker/css/datepicker.css" type="text/css"/>
 <style>
-
+.datepicker table tr td.active.active{
+    background : #f87405 !important;
+}
 ul.list{
     height: 170px !important;
     overflow-y: scroll !important;

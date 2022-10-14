@@ -19,10 +19,11 @@ if (isset($_POST['transaction_id']) || isset($_POST['token'])) {
         //recuperer les info du clients pour personnaliser les reponses.
         /* $commande->getUserByPayment(); */
 
+
+
         // redirection vers une page en fonction de l'état de la transaction
         if ($code == '00') {
             echo 'Felicitation, votre paiement a été effectué avec succès';
-            header('location:' . $domaine .'/valide');
 //            header('Location: '.$commande->getCurrentUrl().'/');
         }
         else {

@@ -8,9 +8,9 @@ class Carte {
     // Read
 
 
-    public function addCarte($date_carte,$genre,$nom,$prenom,$slug,$iso_phone,$dial_phone,$phone,$niveau,$village,$piece,$photo){
-        $query = "INSERT INTO carte(date_carte,genre,nom,prenom,slug,iso_phone,dial_phone,phone,niveau,village,piece,photo)
-            VALUES (:date_carte,:genre,:nom,:prenom,:slug,:iso_phone,:dial_phone,:phone,:niveau,:village,:piece,:photo)";
+    public function addCarte($date_carte,$genre,$nom,$prenom,$slug,$date_nais,$lieu_nais,$iso_phone,$dial_phone,$phone,$niveau,$village,$piece,$photo){
+        $query = "INSERT INTO carte(date_carte,genre,nom,prenom,slug,date_nais,lieu_nais,iso_phone,dial_phone,phone,niveau,village,piece,photo)
+            VALUES (:date_carte,:genre,:nom,:prenom,:slug,:date_nais,:lieu_nais,:iso_phone,:dial_phone,:phone,:niveau,:village,:piece,:photo)";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
             "date_carte" => $date_carte,
@@ -18,6 +18,8 @@ class Carte {
             "nom" => $nom,
             "prenom" => $prenom,
             "slug" => $slug,
+            "date_nais" => $date_nais,
+            "lieu_nais" => $lieu_nais,
             "iso_phone" => $iso_phone,
             "dial_phone" => $dial_phone,
             "phone" => $phone,
@@ -34,46 +36,16 @@ class Carte {
     }
 
 
-    public function getMembreByEmail($mail){
-
-        $query = "SELECT * FROM membre
-        WHERE email = :mail";
-        $rs = $this->bdd->prepare($query);
-        $rs->execute(array(
-            "mail" => $mail
-        ));
-
-        return $rs;
-    }
-    public function getMmembreById($id){
-
-        $query = "SELECT * FROM membre
-        WHERE id_membre = :id";
-        $rs = $this->bdd->prepare($query);
-        $rs->execute(array(
-            "id" => $id
-        ));
-
-        return $rs;
-    }
-
-    //Count
-
-    public function nbrMmembre(){
-        $query = "SELECT COUNT(*) as nb FROM membre";
-        $rs = $this->bdd->query($query);
-        return $rs;
-    }
 
 //Update
 
     // Update MP
-    public function updatePassword($password,$id){
-        $query = "UPDATE membre
-            SET mot_de_passe = :password WHERE id_membre = :id ";
+    public function updateEtat($propriete1,$val1,$id){
+        $query = "UPDATE carte
+            SET $propriete1 = :val1 WHERE id_carte  = :id ";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
-            "password" => $password,
+            "val1" => $val1,
             "id" => $id
         ));
 
@@ -81,20 +53,7 @@ class Carte {
         return $nb;
 
     }
-    public function updateMembrePhoto($photo,$id){
-        $query = "UPDATE membre
-            SET photo = :photo
-            WHERE id_membre = :id ";
-        $rs = $this->bdd->prepare($query);
-        $rs->execute(array(
-            "photo" => $photo,
-            "id" => $id
-        ));
 
-        $nb = $rs->rowCount();
-        return $nb;
-
-    }
     // Verification valeur existant
     public function verify($propriete1,$val1,$propriete2,$val2){
 
