@@ -7,6 +7,11 @@ class Carte {
 
     // Read
 
+    public function getAllCarte(){
+        $query = "SELECT * FROM carte ORDER BY id_carte DESC";
+        $rs = $this->bdd->query($query);
+        return $rs;
+    }
 
     public function addCarte($date_carte,$genre,$nom,$prenom,$slug,$date_nais,$lieu_nais,$iso_phone,$dial_phone,$phone,$niveau,$village,$piece,$photo){
         $query = "INSERT INTO carte(date_carte,genre,nom,prenom,slug,date_nais,lieu_nais,iso_phone,dial_phone,phone,niveau,village,piece,photo)
@@ -40,6 +45,19 @@ class Carte {
 //Update
 
     // Update MP
+    public function updateIdTrans($propriete1,$val1,$id){
+        $query = "UPDATE carte
+            SET $propriete1 = :val1 WHERE id_carte  = :id ";
+        $rs = $this->bdd->prepare($query);
+        $rs->execute(array(
+            "val1" => $val1,
+            "id" => $id
+        ));
+
+        $nb = $rs->rowCount();
+        return $nb;
+
+    }
     public function updateEtat($propriete1,$val1,$id){
         $query = "UPDATE carte
             SET $propriete1 = :val1 WHERE id_carte  = :id ";

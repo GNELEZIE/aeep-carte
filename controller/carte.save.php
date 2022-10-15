@@ -24,6 +24,7 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
     $propriete3 ='dial_phone';
     $propriete4 ='phone';
     $propriete5 ='etat';
+    $propriete6 ='trans_id';
     $etatValid = 1;
     $etatInValid = 2;
 
@@ -95,7 +96,7 @@ if($verifPhone->rowCount() > 0){
             "Téléphone" => $dialPhone.' '.$phone,
             "Village" => $villageName
         );
-
+        $save = $carte->updateIdTrans($propriete6,$id_transaction,$save);
         //
         $formData = array(
             "transaction_id"=> $id_transaction,

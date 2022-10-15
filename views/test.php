@@ -1,78 +1,49 @@
-<div class="gender form-group">
-                                                        <label class="g-name d-block">Genre <i class="required"></i></label>
-                                                        <div class="custom-control custom-radio custom-control-inline">
-                                                            <input type="radio" id="genre" name="register_gender" value="mail" class="custom-control-input" />
-                                                            <label class="custom-control-label" for="register_gender_male">Male</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio custom-control-inline">
-                                                            <input type="radio" id="register_gender_female" name="register_gender" value="female" class="custom-control-input">
-                                                            <label class="custom-control-label" for="register_gender_female">Female</label>
-                                                        </div>
-                                                    </div>
-<div class="col-12 col-sm-6">
-    <div class="form-group">
-        <label for="genre">Genre</label>
-        <select name="genre" id="genre" class="input-style" style="display: none;">
-            <option selected="">Genre</option>
-            <option value="Femme">Femme</option>
-            <option value="Homme">Homme</option>
+<?php
 
-        </select>
+//$id = '20221015165834';
+$list = $carte->getAllCarte();
+$propriete ='etat';
 
-    </div>
-</div>
-<script>
+while($data = $list->fetch()){
+    $id = $data['trans_id'];
+    $curl = curl_init();
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://api-checkout.cinetpay.com/v2/payment/check',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS =>'{
+        "apikey" : "1841878195633ffd186cad60.31947873",
+        "transaction_id":"'.$id.'",
+        "site_id": "872975"
 
-    $("#phone").keyup(function (event) {
-        if (/\D/g.test(this.value)) {
-            //Filter non-digits from input value.
-            this.value = this.value.replace(/\D/g, '');
+
+    }',
+        CURLOPT_HTTPHEADER => array(
+            'Content-Type: application/json'
+        ),
+    ));
+
+    $response = curl_exec($curl);
+
+    $err = curl_error($curl);
+    curl_close($curl);
+    if ($err) {
+        echo $err;
+        //throw new Exception("Error :" . $err);
+    }
+    else{
+        $res = json_decode($response,true);
+//        echo $res['data']['amount'];
+        if($res['message'] == 'SUCCES' OR $res['message'] == 'succes'){
+            $etat = 1;
+            $upd = $carte->updateEtat($propriete,$etat,$data['id_carte']);
         }
-    });
 
-    var inputPhone = document.querySelector("#phone");
-    window.intlTelInput(inputPhone, {
-        initialCountry: '<?=$countryCode?>',
-        utilsScript: "<?=$asset?>/plugins/intltelinput/js/utils.js"
-    });
-    var iti = window.intlTelInputGlobals.getInstance(inputPhone);
-    var countryData = iti.getSelectedCountryData();
-    $('#isoPhone').val(countryData["iso2"]);
-    $('#dialPhone').val(countryData["dialCode"]);
-    inputPhone.addEventListener("countrychange", function() {
-        var iti = window.intlTelInputGlobals.getInstance(inputPhone);
-        var countryData = iti.getSelectedCountryData();
-        $('#isoPhone').val(countryData["iso2"]);
-        $('#dialPhone').val(countryData["dialCode"]);
-    });
-
-    $('#formCarte').submit(function(e){
-        e.preventDefault();
-        $('.load').html('<i class="loader-btn"></i>');
-        var value = document.getElementById('formCarte');
-        var form = new FormData(value);
-
-        $.ajax({
-            method: 'post',
-            url: '<?=$domaine?>/controle/carte.save',
-            data: form,
-            contentType:false,
-            cache:false,
-            processData:false,
-            dataType: 'json',
-            success: function(data){
-                if(data.data_info == "ok"){
-                    swal("Opération effectuée avec succès!","", "success");
-                }else {
-
-                }
-            },
-            error: function (error, ajaxOptions, thrownError) {
-                alert(error.responseText);
-            }
-        });
-    });
-
-
-
-</script>
+//    print_r($res);
+    }
+}
