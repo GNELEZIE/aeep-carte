@@ -67,7 +67,7 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
         $tmp_name = $_FILES['photo']['tmp_name'];
         move_uploaded_file($tmp_name, $destination);
     }
-if($verifPhone->rowCount() > 0){
+if($verifPhone->rowCount() > 0 and $rsSlug['etat'] == 1){
     $errors['cart'] = 'Ce numéro est déjà inscrit pour la carte de membre AEEP !';
 }else{
     $save = $carte->addCarte($dateGmt,$genre,$nom,$prenom,$slug,$dateNais,$lieu,$isoPhone,$dialPhone,$phone,$niveau,$village,$piece,$photo);
