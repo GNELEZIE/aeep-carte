@@ -28,7 +28,7 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
     $etatValid = 1;
     $etatInValid = 2;
 
-    $amount = 100;
+    $amount = 1000;
     $currency = 'XOF';
     $description = 'La carte de membre AEEP';
 
@@ -50,7 +50,7 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
 
     if (in_array($piece_ext, $extensionValide)) {
         $piece = uniqid().'.'.$piece_ext;
-        $destination ='uploads/' . $piece;
+        $destination = $domaine.'/uploads/' . $piece;
         $tmp_name = $_FILES['piece']['tmp_name'];
         move_uploaded_file($tmp_name, $destination);
     }
@@ -63,7 +63,7 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
 
     if (in_array($photo_ext, $extensionValide)) {
         $photo = uniqid().'.'.$photo_ext;
-        $destination ='uploads/' . $photo;
+        $destination = $domaine.'/uploads/' . $photo;
         $tmp_name = $_FILES['photo']['tmp_name'];
         move_uploaded_file($tmp_name, $destination);
     }
