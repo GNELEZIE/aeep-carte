@@ -142,7 +142,7 @@ cliquer sur le bouton vérifier la disponibilité de ma carte pour vérifier la 
                                                         <div class="col-12 col-sm-6">
                                                             <div class="form-group">
                                                                 <div class="">
-                                                                    <p>La photo de votre pièce (format accepté: jpg, png, jpeg) <i class="required"></i></p>
+                                                                    <p>La photo de la carte d'étudiant ou carte scolaire <i class="required"></i></p>
                                                                 </div>
                                                                 <div class="form-label-group pieceDiv">
                                                              <span class="file-msg">
