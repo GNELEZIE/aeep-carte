@@ -225,7 +225,10 @@ ul.list{
     padding: 20px !important;
 }
 
-
+.text-orange{
+    color: #ff4600 !important;
+    font-weight: bold;
+}
 
 .btn-transparence-orange {
     background: #ff46003b !important;
@@ -375,8 +378,15 @@ ul.list{
 .font-21{
     font-size:21px !important;
 }
+
+.p-20{
+    padding: 20px !important;
+}
+.motif{
+    border-left: 5px solid #ff4500;
+}
 @media(max-width: 767px) {
-    .offset-4 {
+    .offset-4, .offset-3, .offset-6 {
         margin-left: 0 !important;
     }
     .register-form-wrap{

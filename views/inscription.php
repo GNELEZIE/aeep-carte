@@ -187,36 +187,7 @@ cliquer sur le bouton vérifier la disponibilité de ma carte pour vérifier la 
     </div>
 </section>
 <?php include_once $layout.'/footer.php';?>
-<script>
-$(document).ready(function(){
-    (function ($) {
-        $.fn.datepicker.dates['fr'] = {
-            days: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
-            daysShort: ["Dim.", "Lun.", "Mar.", "Mer.", "Jeu.", "Ven.", "Sam."],
-            daysMin: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
-            months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
-            monthsShort: ["Janv.", "Févr.", "Mars", "Avril", "Mai", "Juin", "Juil.", "Août", "Sept.", "Oct.", "Nov.", "Déc."],
-            today: "Aujourd'hui",
-            monthsTitle: "Mois",
-            clear: "Effacer",
-            format: "dd/mm/yyyy"
-        };
-    }(jQuery));
 
-    $('#dateN').datepicker({
-        language: 'fr',
-        orientation: 'bottom',
-        autoclose: true,
-        assumeNearbyYear: true,
-        showOnFocus: true,
-        format: 'dd/mm/yyyy',
-        weekStart: 1,
-        todayHighlight: true,
-        defaultViewDate: 'today'
-    });
-
-});
-</script>
 <script>
 
     var photoDiv = $('.photoDiv');

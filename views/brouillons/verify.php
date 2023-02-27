@@ -76,8 +76,43 @@ include_once $layout.'/header.php';
     });
 
     $('#formVerify').submit(function(e){
+        e.preventDefault();
         $('.loadVerif').html('Verificaion...');
+        var value = document.getElementById('formVerify');
+        var form = new FormData(value);
 
+        $.ajax({
+            method: 'post',
+            url: '<?=$domaine?>/controle/verify',
+            data: form,
+            contentType:false,
+            cache:false,
+            processData:false,
+            dataType: 'json',
+            success: function(data){
+                if(data.data_info == "0"){
+                     $('.loadVerif').html('Verifier maintenant');
+                    $('.loaded').html('Envoyer maintenant');
+                    $('#phone').val('');
+                    swal("Votre carte est en cours de production !","", "warning");
+                }else if(data.data_info == "1") {
+                     $('.loadVerif').html('Verifier maintenant');
+                    $('#phone').val('');
+                    swal("Votre carte est disponible!","", "success");
+                }else if(data.data_info == "2") {
+                     $('.loadVerif').html('Verifier maintenant');
+                    $('#phone').val('');
+                    swal("Votre inscription a été rejeté !","", "error");
+                }else{
+                     $('.loadVerif').html('Verifier maintenant');
+                    $('#phone').val('');
+                    swal("Ce numéro n'est pas inscrit !","", "error");
+                }
+            },
+            error: function (error, ajaxOptions, thrownError) {
+                alert(error.responseText);
+            }
+        });
     });
 
 

@@ -1,5 +1,5 @@
 <?php
-$data_info = '';
+
 if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myformkey'] == $_POST['formkey']){
     extract($_POST);
 
@@ -15,19 +15,15 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
     $verifPhone = $carte->verifPhone($propriete1,$isoPhone,$propriete2,$dialPhone,$propriete3,$phone);
 
     if($data = $verifPhone->fetch()){
-        if($data['statut'] == 0){
-            $data_info = '0';
-        }elseif($data['statut'] == 1){
-            $data_info = '1';
-        }else{
-            $data_info = '2';
-        }
+        $_SESSION['result'] = $data;
+        header('location:'.$domaine.'/resultat');
     }else{
-        $data_info = '3';
+        $tab = array(
+            'phone' => $phone
+        );
+        $_SESSION['no_result'] = $tab;
+        header('location:'.$domaine.'/resultat');
     }
 
+
 }
-$output = array(
-    'data_info' => $data_info
-);
-echo json_encode($output);
