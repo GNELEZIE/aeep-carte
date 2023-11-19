@@ -8,7 +8,7 @@
 <meta name="description" content="simple description for your site"/>
 <meta name="keywords" content="keyword1, keyword2"/>
 <meta name="author" content="Gnelezie"/>
-<link rel="shortcut icon" type="image/x-icon"  href="<?=$asset?>/media/icon.png"/>
+<link rel="shortcut icon" type="image/x-icon"  href="<?=$asset?>/media/icons.png"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet" />
 <link rel="stylesheet" href="<?=$asset?>/vendor/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="<?=$asset?>/vendor/navbar/bootstrap-4-navbar.css" />
@@ -28,6 +28,25 @@
 <link rel="stylesheet" href="<?=$asset?>/plugins/intltelinput/css/intlTelInput.min.css"/>
 <link rel="stylesheet" href="<?=$asset?>/plugins/bootstrap-datepicker/css/datepicker.css" type="text/css"/>
 <style>
+
+.register-form-content .reunion-form-wrap:before{
+
+}
+.reunion-form-wrap{
+    padding: 15px;
+}
+
+#bg1{
+    background-image: url(<?=$asset?>/media/r2.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    padding: 100px 0;
+    z-index: 1;
+}
+
+
+
 .datepicker table tr td.active.active{
     background : #f87405 !important;
 }
@@ -411,8 +430,8 @@ ul.list{
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="main-menu navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="https://aeep-pongala.com/">
-                            <img src="<?=$asset?>/media/logos.png" alt="Logo" />
+                        <a class="navbar-brand" href="<?=$domaine_principal?>">
+                            <img src="<?=$asset?>/media/LogoAeep.png" alt="Logo" />
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menucontent" aria-controls="menucontent" aria-expanded="false">
                             <span class="navbar-toggler-icon"></span>
@@ -420,11 +439,12 @@ ul.list{
 
                         <div class="collapse navbar-collapse" id="menucontent">
                             <ul class="navbar-nav ml-auto">
-                                <li class="nav-item"><a class="nav-link" href="https://aeep-pongala.com/">Accueil</a></li>
-                                <li class="nav-item "><a class="nav-link" href="https://aeep-pongala.com/blog/">Actualité</a></li>
-                                <li class="nav-item "><a class="nav-link" href="https://aeep-pongala.com/courses/">Formation</a></li>
-                                <li class="nav-item "><a class="nav-link" href="https://aeep-pongala.com/contact/">Contact</a></li>
-                                <li class="nav-item "><a class="nav-link" href="https://aeep-pongala.com/galerie/">Galerie</a></li>
+                                <li class="nav-item"><a class="nav-link" href="<?=$domaine_principal?>/">Accueil</a></li>
+                                <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/actualites/">Actualité</a></li>
+                                <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/courses/">Formation</a></li>
+                                <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/contact/">Contact</a></li>
+                                <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/galerie/">Galerie</a></li>
+                                <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/reunion/">Réunion</a></li>
 
                             </ul>
                         </div>

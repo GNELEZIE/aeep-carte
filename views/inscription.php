@@ -19,9 +19,9 @@ include_once $layout.'/header.php';
             <div class="col-lg-8 m-auto text-center">
                 <div class="page-title-content">
                     <h1 class="h2 pt-5">Carte de membre</h1>
-                    <p>Pour ceux qui ont déjà effectué l'inscription vous pouvez 
-cliquer sur le bouton vérifier la disponibilité de ma carte pour vérifier la disponibilité de votre carte
-                       </p>
+                    <p>Pour ceux qui ont déjà effectué l'inscription vous pouvez
+                        cliquer sur le bouton vérifier la disponibilité de ma carte pour vérifier la disponibilité de votre carte
+                    </p>
                     <a href="<?=$domaine?>/verify" class="btn btn-inscript smooth-scroll">Verifier la disponibilité</a>
                 </div>
             </div>
@@ -37,147 +37,148 @@ cliquer sur le bouton vérifier la disponibilité de ma carte pour vérifier la 
                     <div class="register-page-inner">
                         <div class="col-lg-10 m-auto">
                             <div class="register-form-content">
-                                        <div class="register-form-wrap">
-                                            <h3>Inscription pour la carte membre de l'AEEP</h3>
-                                            <div class="register-form">
-                                                <form method="post" id="formCarte" enctype="multipart/form-data">
-                                                    <?php if(!empty($errors)){ ?>
-                                                        <div class="alert alert-danger" style="font-size: 14px" role="alert">
-                                                            <?php foreach($errors as $error){ ?>
-                                                                <?php echo $error ?>
-                                                            <?php }?>
-                                                        </div>
+                                <div class="register-form-wrap">
+                                    <h3>Inscription pour la carte membre de l'AEEP</h3>
+                                    <div class="register-form">
+                                        <form method="post" id="formCarte" enctype="multipart/form-data">
+                                            <?php if(!empty($errors)){ ?>
+                                                <div class="alert alert-danger" style="font-size: 14px" role="alert">
+                                                    <?php foreach($errors as $error){ ?>
+                                                        <?php echo $error ?>
                                                     <?php }?>
-                                                    <div class="row">
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="nom">Nom <i class="required"></i></label>
-                                                                <input type="hidden" class="form-control " name="formkey" value="<?= $token ?>">
-                                                                <input type="text" class="form-control input-style" id="nom" name="nom" placeholder="Nom" required/>
-                                                            </div>
-                                                        </div>
+                                                </div>
+                                            <?php }?>
 
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="prenom">Prénom <i class="required"></i></label>
-                                                                <input type="text" class="form-control input-style" id="prenom" name="prenom" placeholder="Prénom" required/>
-                                                            </div>
-                                                        </div>
+                                            <div class="row">
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="nom">Nom <i class="required"></i></label>
+                                                        <input type="hidden" class="form-control " name="formkey" value="<?= $token ?>">
+                                                        <input type="text" class="form-control input-style" id="nom" name="nom" placeholder="Nom" required/>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="dat">Date de naissance <i class="required"></i></label>
-                                                                <input type="date" class="form-control input-style" id="dat" name="dat" placeholder="Date de naissance" required/>
-                                                            </div>
-                                                        </div>
+                                                </div>
 
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="lieu">Lieu de naissance <i class="required"></i></label>
-                                                                <input type="text" class="form-control input-style" id="lieu" name="lieu" placeholder="Lieu de naissance" required/>
-                                                            </div>
-                                                        </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="prenom">Prénom <i class="required"></i></label>
+                                                        <input type="text" class="form-control input-style" id="prenom" name="prenom" placeholder="Prénom" required/>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="niveau">Niveau d'étude <i class="required"></i></label>
-                                                                <input type="text" class="form-control input-style" id="niveau" name="niveau" placeholder="Niveau d'étude" />
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="village">Village</label>
-                                                                <select name="village" id="village" class="input-style" style="display: none;">
-                                                                    <option selected="">Categories</option>
-                                                                    <option value="1">Blagounon</option>
-                                                                    <option value="2">Baya</option>
-                                                                    <option value="3">Gballo</option>
-                                                                    <option value="4">Kasséré</option>
-                                                                    <option value="5">Koffre</option>
-                                                                    <option value="6">Koundin</option>
-                                                                    <option value="7">Lafi</option>
-                                                                    <option value="8">Landiougou</option>
-                                                                    <option value="9">Nongana</option>
-                                                                    <option value="10">Pinvoro</option>
-                                                                    <option value="11">Tiasso</option>
-                                                                    <option value="12">Toungboli</option>
-                                                                    <option value="13">Tomba</option>
-                                                                    <option value="14">Pongafré</option>
-                                                                    <option value="15">Sienrè</option>
-                                                                    <option value="16">Sionfan</option>
-                                                                    <option value="17">Yelle</option>
-                                                                </select>
-
-                                                            </div>
-                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="dat">Date de naissance <i class="required"></i></label>
+                                                        <input type="date" class="form-control input-style" id="dat" name="dat" placeholder="Date de naissance" required/>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="genre">Genre</label>
-                                                                <select name="genre" id="genre" class="input-style" style="display: none;">
-                                                                    <option selected="">Genre</option>
-                                                                    <option value="Femme">Femme</option>
-                                                                    <option value="Homme">Homme</option>
+                                                </div>
 
-                                                                </select>
-
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="phone">Téléphone <i class="required"></i></label>
-                                                                <input type="tel" class="form-control input-style" id="phone" name="phone" required>
-                                                                <input type="hidden"  name="isoPhone" id="isoPhone" value="">
-                                                                <input type="hidden"  name="dialPhone" id="dialPhone" value="">
-                                                            </div>
-                                                        </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="lieu">Lieu de naissance <i class="required"></i></label>
+                                                        <input type="text" class="form-control input-style" id="lieu" name="lieu" placeholder="Lieu de naissance" required/>
                                                     </div>
-                                             
-                                                    <div class="row">
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group">
-                                                                <div class="">
-                                                                    <p>La photo de la carte d'étudiant ou carte scolaire <i class="required"></i></p>
-                                                                </div>
-                                                                <div class="form-label-group pieceDiv">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="niveau">Niveau d'étude <i class="required"></i></label>
+                                                        <input type="text" class="form-control input-style" id="niveau" name="niveau" placeholder="Niveau d'étude" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="village">Village</label>
+                                                        <select name="village" id="village" class="input-style" style="display: none;">
+                                                            <option selected="">Categories</option>
+                                                            <option value="1">Blagounon</option>
+                                                            <option value="2">Baya</option>
+                                                            <option value="3">Gballo</option>
+                                                            <option value="4">Kasséré</option>
+                                                            <option value="5">Koffre</option>
+                                                            <option value="6">Koundin</option>
+                                                            <option value="7">Lafi</option>
+                                                            <option value="8">Landiougou</option>
+                                                            <option value="9">Nongana</option>
+                                                            <option value="10">Pinvoro</option>
+                                                            <option value="11">Tiasso</option>
+                                                            <option value="12">Toungboli</option>
+                                                            <option value="13">Tomba</option>
+                                                            <option value="14">Pongafré</option>
+                                                            <option value="15">Sienrè</option>
+                                                            <option value="16">Sionfan</option>
+                                                            <option value="17">Yelle</option>
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="genre">Genre</label>
+                                                        <select name="genre" id="genre" class="input-style" style="display: none;">
+                                                            <option selected="">Genre</option>
+                                                            <option value="Femme">Femme</option>
+                                                            <option value="Homme">Homme</option>
+
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="phone">Téléphone <i class="required"></i></label>
+                                                        <input type="tel" class="form-control input-style" id="phone" name="phone" required>
+                                                        <input type="hidden"  name="isoPhone" id="isoPhone" value="">
+                                                        <input type="hidden"  name="dialPhone" id="dialPhone" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="form-group">
+                                                        <div class="">
+                                                            <p>La photo de la carte d'étudiant ou carte scolaire <i class="required"></i></p>
+                                                        </div>
+                                                        <div class="form-label-group pieceDiv">
                                                              <span class="file-msg">
                                                           <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-camera mb-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg><br/>
                                                             Cliquez ou glissez déposez la photo de votre pièce
                                                               </span>
-                                                                    <input type="file" class="file-input input-piece" name="piece" id="piece" accept=".png, .jpg, .jpeg" required>
-                                                                </div>
-                                                            </div>
+                                                            <input type="file" class="file-input input-piece" name="piece" id="piece" accept=".png, .jpg, .jpeg" required>
                                                         </div>
+                                                    </div>
+                                                </div>
 
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group">
-                                                                <div class="">
-                                                                    <p>Votre photo (format accepté: jpg, png, jpeg) <i class="required"></i></p>
-                                                                </div>
-                                                                <div class="form-label-group photoDiv">
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="form-group">
+                                                        <div class="">
+                                                            <p>Votre photo (format accepté: jpg, png, jpeg) <i class="required"></i></p>
+                                                        </div>
+                                                        <div class="form-label-group photoDiv">
                                                              <span class="file-msg">
                                                           <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-camera mb-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg><br/>
                                                             Cliquez ou glissez déposez votre photo
                                                               </span>
-                                                                    <input type="file" class="file-input input-photo" name="photo" id="photo" accept=".png, .jpg, .jpeg" required>
-                                                                </div>
-                                                            </div>
+                                                            <input type="file" class="file-input input-photo" name="photo" id="photo" accept=".png, .jpg, .jpeg" required>
                                                         </div>
                                                     </div>
-
-                                                      <div class="row">
-                                                        <div class="col-md-4 offset-4 text-center">
-                                                            <button class="btn-inscript loaded w100" style="cursor:pointer"> Envoyer maintenant</button>
-                                                        </div>
-                                                      </div>
-                                                </form>
+                                                </div>
                                             </div>
-                                        </div>
+
+                                            <div class="row">
+                                                <div class="col-md-4 offset-4 text-center">
+                                                    <button class="btn-inscript loaded w100" style="cursor:pointer"> Envoyer maintenant</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

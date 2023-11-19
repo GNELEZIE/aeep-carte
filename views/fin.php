@@ -1,9 +1,5 @@
 <?php
 
-//require_once $controller.'/carte.save.php';
-$token = openssl_random_pseudo_bytes(16);
-$token = bin2hex($token);
-$_SESSION['myformkey'] = $token;
 include_once $layout.'/header.php';
 ?>
 
@@ -12,14 +8,15 @@ include_once $layout.'/header.php';
     <div class="register-page-wrapper section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 offset-4">
+                <div class="col-lg-12">
                     <div class="register-page-inner">
                         <div class="col-lg-10 m-auto">
-                            <div class="register-form-content text-center">
-                                <img src="<?=$asset?>/media/sss.png" class="w87" alt=""/>
-                                <h3 class="text-green">Félicitation !</h3>
-                                <p>Votre inscription pour la carte de membre de l'AEEP a été effectué avec succès.</p>
-                                <p>Nb : Contactez le Secrétaire général pour le paiment au 01 73 68 18 77</p>
+                            <div class="register-form-content">
+                                        <div class="register-form-wrap">
+                                            <h3 class="text-danger" style="text-transform: inherit">Fin des inscriptions pour la carte membre de l'AEEP</h3>
+                                            <div class="register-form">
+                                            </div>
+                                        </div>
                             </div>
                         </div>
                     </div>
@@ -29,6 +26,7 @@ include_once $layout.'/header.php';
     </div>
 </section>
 <?php include_once $layout.'/footer.php';?>
+
 <script>
 
     var photoDiv = $('.photoDiv');
@@ -155,31 +153,7 @@ include_once $layout.'/header.php';
     });
 
     $('#formCarte').submit(function(e){
-        e.preventDefault();
         $('.loaded').html('Envoie en cours...');
-        var value = document.getElementById('formCarte');
-        var form = new FormData(value);
-
-        $.ajax({
-            method: 'post',
-            url: '<?=$domaine?>/controle/carte.save',
-            data: form,
-            contentType:false,
-            cache:false,
-            processData:false,
-            dataType: 'json',
-            success: function(data){
-                if(data.data_info == "ok"){
-                    $('.loaded').html('Envoyer maintenant');
-                    swal("Opération effectuée avec succès!","", "success");
-                }else {
-                    swal(" effectuée avec succès!","", "error");
-                }
-            },
-            error: function (error, ajaxOptions, thrownError) {
-                alert(error.responseText);
-            }
-        });
     });
 
 

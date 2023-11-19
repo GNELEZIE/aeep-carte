@@ -20,6 +20,7 @@ include_once 'model/Connexion.class.php';
 
 // appelle des class
 include_once 'model/Carte.class.php';
+include_once 'model/Reunion.class.php';
 
 $cdn = 'cdn';
 $class = 'class';

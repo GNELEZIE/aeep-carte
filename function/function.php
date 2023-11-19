@@ -14,14 +14,14 @@ if(!function_exists('village_name')){
             "6"=> "Koundin",
             "7"=> "Lafi",
             "8"=> "Landiougou",
-            "9"=> "Nonganan",
+            "9"=> "Nongana",
             "10"=> "Pinvoro",
             "11"=> "Tiasso",
-            "12"=> "Toungbeli",
+            "12"=> "Toungboli",
             "13"=> "Tomba",
             "14"=> "Pongafré",
             "15"=> "Sienrè",
-            "16"=> "Siomfan",
+            "16"=> "Sionfan",
             "17"=> "Yélé"
         );
 
