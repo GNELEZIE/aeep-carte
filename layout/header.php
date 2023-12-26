@@ -29,6 +29,14 @@
 <link rel="stylesheet" href="<?=$asset?>/plugins/bootstrap-datepicker/css/datepicker.css" type="text/css"/>
 <style>
 
+#page-title-area1 {
+    background: linear-gradient(0deg, rgb(0 0 0 / 40%), rgb(13 12 13 / 61%)), url(http://localhost:8080/www/aeep-carte/assets/media/bv.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    padding: 100px 0;
+    z-index: 1;
+}
 .register-form-content .reunion-form-wrap:before{
 
 }
@@ -442,6 +450,7 @@ ul.list{
                                 <li class="nav-item"><a class="nav-link" href="<?=$domaine_principal?>/">Accueil</a></li>
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/actualites/">Actualité</a></li>
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/courses/">Formation</a></li>
+                                <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/sortie-detente-2024/">Sortie détente</a></li>
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/contact/">Contact</a></li>
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/galerie/">Galerie</a></li>
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/reunion/">Réunion</a></li>
