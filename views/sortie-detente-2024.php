@@ -19,7 +19,10 @@ include_once $layout.'/header.php';
             <div class="col-lg-8 m-auto text-center">
                 <div class="page-title-content">
                     <h1 class="h2 pt-5 text-white">Sortie détente AEEP 2024</h1>
-                    <h5 class="text-white"><b>Montant : 3 500 F</b></h5>
+                    <h5 class="text-white"><b>Participation : 3 500 F</b></h5>
+
+                    <h5 class="mydate">Le dimanche 19 Mai 2024 à la plage de Jacqueville</h5>
+
 <!--                    <p class="text-white">-->
 <!--                       <b> NB: Les membres qui vont payer les cotisation avant le 10 Mai auront un tee-shirt gratuitement.</b>-->
 <!--                    </p>-->

@@ -28,9 +28,15 @@
 <link rel="stylesheet" href="<?=$asset?>/plugins/intltelinput/css/intlTelInput.min.css"/>
 <link rel="stylesheet" href="<?=$asset?>/plugins/bootstrap-datepicker/css/datepicker.css" type="text/css"/>
 <style>
-
+.mydate{
+    background: #ff4500;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+}
 #page-title-area1 {
-    background: linear-gradient(0deg, rgb(0 0 0 / 40%), rgb(13 12 13 / 61%)), url(http://localhost:8080/www/aeep-carte/assets/media/bv.jpg);
+    background: linear-gradient(0deg, rgb(0 0 0 / 40%), rgb(13 12 13 / 61%)), url('<?=$asset?>/media/bv.jpg');
     background-size: cover;
     background-position: center center;
     position: relative;
