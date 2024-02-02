@@ -7,7 +7,7 @@
 //    $countryCode = '';
 //}
 $countryCode = 'CI';
-require_once $controller.'/carte.save.php';
+require_once $controller.'/inscription-with-pay.php';
 $token = openssl_random_pseudo_bytes(16);
 $token = bin2hex($token);
 $_SESSION['myformkey'] = $token;

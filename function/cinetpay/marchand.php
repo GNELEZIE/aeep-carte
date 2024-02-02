@@ -1,6 +1,6 @@
 <?php
 $marchand = array(
-    "apikey" => "1841878195633ffd186cad60.31947873", // Enrer votre apikey
-    "site_id" => "872975", //Entrer votre site_ID
-    "secret_key" => "860111730634001a702f008.01112166" //Entrer votre clé secret
+    "apikey" => "83911909065b2cd4b369795.33194900", // Enrer votre apikey
+    "site_id" => "5867736", //Entrer votre site_ID
+    "secret_key" => "29634511165b2ce7babb120.67278062" //Entrer votre clé secret
 );
