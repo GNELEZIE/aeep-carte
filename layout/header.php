@@ -27,6 +27,8 @@
 <link rel="stylesheet" href="<?=$asset?>/plugins/ani/animate.css"/>
 <link rel="stylesheet" href="<?=$asset?>/plugins/intltelinput/css/intlTelInput.min.css"/>
 <link rel="stylesheet" href="<?=$asset?>/plugins/bootstrap-datepicker/css/datepicker.css" type="text/css"/>
+<script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
+
 <style>
 .mydate{
     background: #ff4500;
@@ -418,6 +420,25 @@ ul.list{
 .motif{
     border-left: 5px solid #ff4500;
 }
+
+#embed{
+    height: 500px;
+}
+#modal-text-bloc{
+    display: none !important;
+}
+.modal-header img{
+    width: 150px !important;
+    height: 62px !important;
+}
+.d-noned .text-right{
+    display: none !important;
+}
+.d-none{
+    display: none !important;
+}
+
+
 @media(max-width: 767px) {
     .offset-4, .offset-3, .offset-6 {
         margin-left: 0 !important;

@@ -138,6 +138,17 @@ class Carte {
 
         return $rs;
     }
+    public function verifCartes($propriete1,$val1,$propriete2,$val2){
+
+        $query = "SELECT * FROM carte WHERE $propriete1 = :val1 and $propriete2 = :val2";
+        $rs = $this->bdd->prepare($query);
+        $rs->execute(array(
+            "val1" => $val1,
+            "val2" => $val2
+        ));
+
+        return $rs;
+    }
 
 
 

@@ -1,7 +1,7 @@
 <?php
-/*Commenter ses deux lines si vous êtes en production
+/*Commenter ses deux lines si vous êtes en production*/
 error_reporting(E_ALL);
-ini_set('display_errors', 1);*/
+ini_set('display_errors', 1);
 
 // required libs
 require_once __DIR__ . '/src/new-guichet.php';

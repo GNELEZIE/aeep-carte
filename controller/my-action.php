@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myformkey'] == $_POST['formkey']){
+if(isset($_SESSION['myposted'])){
 
     extract($_POST);
 
@@ -10,8 +10,8 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
     $prenom =  htmlentities(trim(addslashes($prenom)));
     $phone =  htmlentities(trim(addslashes($phone)));
     $village =  htmlentities(trim(addslashes($village)));
-    $village_name = village_name($village);
-    $amount = 1150;
+    $village_name = $village;
+    $amount = 100;
     $currency = 'XOF';
     $description = 'Inscription pour la sortie détente';
     $verifPhone = $sortie->verifPhoneSortie($phone);
@@ -74,6 +74,10 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
                 if ($result["code"] == '201')
                 {
                     $url = $result["data"]["payment_url"];
+
+                    // ajouter le token à la transaction enregistré
+                    /* $commande->update(); */
+                    //redirection vers l'url de paiement
                     header('Location:'.$url);
 
                 }

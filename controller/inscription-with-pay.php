@@ -18,9 +18,12 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
     $isoPhone =  htmlentities(trim(addslashes($isoPhone)));
     $dialPhone =  htmlentities(trim(addslashes($dialPhone)));
     $villageName = village_name($village);
-    $slug = create_slug($_POST['prenom']);
+
+    $slg = $nom.''.$prenom;
+    $slug = create_slug($slg);
     $propriete1 ='prenom';
     $propriete2 ='iso_phone';
+    $propriete10 ='nom';
     $propriete3 ='dial_phone';
     $propriete4 ='phone';
     $propriete5 ='etat';
@@ -28,12 +31,12 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
     $etatValid = 1;
     $etatInValid = 2;
 
-    $amount = 100;
+    $amount = 1150;
     $currency = 'XOF';
     $description = 'La carte de membre AEEP';
 
 
-    $verifSlug = $carte->verifCarte($propriete1,$prenom);
+    $verifSlug = $carte->verifCartes($propriete1,$prenom,$propriete10,$nom);
 
 
     $verifPhone = $carte->verifPhone($propriete2,$isoPhone,$propriete3,$dialPhone,$propriete4,$phone);
@@ -50,8 +53,8 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
 
     if (in_array($piece_ext, $extensionValide)) {
         $piece = uniqid().'.'.$piece_ext;
-//        $destination = $_SERVER['DOCUMENT_ROOT'].'/ma-carte.aeep-pongala.net/uploads/'.$piece;
-        $destination = $_SERVER['DOCUMENT_ROOT'].'/www/aeep-carte/uploads/'.$piece;
+        $destination = $_SERVER['DOCUMENT_ROOT'].'/ma-carte.aeep-pongala.net/uploads/'.$piece;
+      //  $destination = $_SERVER['DOCUMENT_ROOT'].'/www/aeep-carte/uploads/'.$piece;
         $tmp_name = $_FILES['piece']['tmp_name'];
         move_uploaded_file($tmp_name, $destination);
     }
@@ -64,8 +67,8 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
 
     if (in_array($photo_ext, $extensionValide)) {
         $photo = uniqid().'.'.$photo_ext;
-//        $destination = $_SERVER['DOCUMENT_ROOT'].'/ma-carte.aeep-pongala.net/uploads/'.$photo;
-        $destination = $_SERVER['DOCUMENT_ROOT'].'/www/aeep-carte/uploads/'.$photo;
+       $destination = $_SERVER['DOCUMENT_ROOT'].'/ma-carte.aeep-pongala.net/uploads/'.$photo;
+     //   $destination = $_SERVER['DOCUMENT_ROOT'].'/www/aeep-carte/uploads/'.$photo;
         $tmp_name = $_FILES['photo']['tmp_name'];
         move_uploaded_file($tmp_name, $destination);
     }

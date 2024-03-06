@@ -1,20 +1,19 @@
 
-<?php 
-
+<?php
 
 if (isset($_POST['cpm_trans_id'])) {
-  
+
     try {
-    
+
         require_once __DIR__ . '/../src/new-guichet.php';
         require_once __DIR__ . '/../commande.php';
         require_once __DIR__ . '/../marchand.php';
 
         //Création d'un fichier log pour s'assurer que les éléments sont bien exécuté
         $log  = "User: ".$_SERVER['REMOTE_ADDR'].' - '.date("F j, Y, g:i a").PHP_EOL.
-        "TransId:".$_POST['cpm_trans_id'].PHP_EOL.
-        "SiteId: ".$_POST['cpm_site_id'].PHP_EOL.
-        "-------------------------".PHP_EOL;
+            "TransId:".$_POST['cpm_trans_id'].PHP_EOL.
+            "SiteId: ".$_POST['cpm_site_id'].PHP_EOL.
+            "-------------------------".PHP_EOL;
         //Save string to log, use FILE_APPEND to append.
         file_put_contents('./log_'.date("j.n.Y").'.log', $log, FILE_APPEND);
 
@@ -25,10 +24,8 @@ if (isset($_POST['cpm_trans_id'])) {
         // apiKey
         $apikey = $marchand["apikey"];
 
-
         // siteId
         $site_id = $_POST['cpm_site_id'];
-
 
         $CinetPay = new CinetPay($site_id, $apikey);
         //On recupère le statut de la transaction dans la base de donnée
@@ -48,7 +45,6 @@ if (isset($_POST['cpm_trans_id'])) {
         // Dans le cas contrait, on verifie l'état de la transaction en cas de tentative de paiement sur CinetPay
 
         $CinetPay->getPayStatus($id_transaction, $site_id);
-
 
         $amount = $CinetPay->chk_amount;
         $currency = $CinetPay->chk_currency;
@@ -83,7 +79,4 @@ if (isset($_POST['cpm_trans_id'])) {
     } catch (Exception $e) {
         echo "Erreur :" . $e->getMessage();
     }
-} else {
-    // direct acces on IPN
-    echo "cpm_trans_id non fourni";
 }

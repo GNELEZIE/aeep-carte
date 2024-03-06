@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../src/new-guichet.php';
 require_once __DIR__ . '/../commande.php';
-include('../marchand.php');
+require_once __DIR__ . '/../marchand.php';
 
 if (isset($_POST['transaction_id']) || isset($_POST['token'])) {
 
@@ -33,8 +33,4 @@ if (isset($_POST['transaction_id']) || isset($_POST['token'])) {
     } catch (Exception $e) {
         echo "Erreur :" . $e->getMessage();
     }
-} else {
-    echo 'transaction_id non transmis';
-    die();
-
 }

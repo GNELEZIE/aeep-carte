@@ -12,7 +12,8 @@ require_once 'function/cinetpay/src/new-guichet.php';
 //include_once "function/cinetpay/notify/notify.php";
 //include_once "function/cinetpay/return/return.php";
 
-
+//include_once $function."/cinetpay/marchand.php";
+//include_once $function."/cinetpay/commande.php";
 //Include Connexion
 include_once 'model/Connexion.class.php';
 
@@ -21,6 +22,7 @@ include_once 'model/Connexion.class.php';
 // appelle des class
 include_once 'model/Carte.class.php';
 include_once 'model/Reunion.class.php';
+include_once 'model/Sortie.class.php';
 
 $cdn = 'cdn';
 $class = 'class';
