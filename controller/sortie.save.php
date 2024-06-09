@@ -11,7 +11,7 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
     $phone =  htmlentities(trim(addslashes($phone)));
     $village =  htmlentities(trim(addslashes($village)));
     $village_name = village_name($village);
-    $amount = 1150;
+    $amount = 3550;
     $currency = 'XOF';
     $description = 'Inscription pour la sortie détente';
     $verifPhone = $sortie->verifPhoneSortie($phone);

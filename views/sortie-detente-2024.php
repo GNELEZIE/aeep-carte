@@ -46,78 +46,79 @@ include_once $layout.'/header.php';
                         <div class="col-lg-10 m-auto">
                             <div class="register-form-content">
                                 <div class="register-form-wrap">
-                                    <h3 class="p-0 m-0">Inscription pour la sortie détent 2024</h3>
-                                    <h5 class="py-3">Nb: Fin des inscriptions le <b style="color: #ff0000">10 mai 2024</b></h5>
+
+                                      <h2 class="text-danger text-center">Fin des inscriptions</h2>
+
+<!--                                    <h5 class="py-3">Nb: Fin des inscriptions le <b style="color: #ff0000">10 mai 2024</b></h5>-->
 
                                     <div class="register-form">
-                                        <form method="post" id="formCarte" enctype="multipart/form-data">
-                                            <?php if(!empty($errors)){ ?>
-                                                <div class="alert alert-danger" style="font-size: 14px" role="alert">
-                                                    <?php foreach($errors as $error){ ?>
-                                                        <?php echo $error ?>
-                                                    <?php }?>
-                                                </div>
-                                            <?php }?>
-
-                                            <div class="row">
-                                                <div class="col-12 col-sm-6">
-                                                    <div class="form-group">
-                                                        <label for="nom">Nom <i class="required"></i></label>
-                                                        <input type="hidden" class="form-control " name="formkey" value="<?= $token ?>">
-                                                        <input type="text" class="form-control input-style" id="nom" name="nom" placeholder="Nom" required/>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-12 col-sm-6">
-                                                    <div class="form-group">
-                                                        <label for="prenom">Prénom <i class="required"></i></label>
-                                                        <input type="text" class="form-control input-style" id="prenom" name="prenom" placeholder="Prénom" required/>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label for="phone">Téléphone <i class="required"></i></label>
-                                                        <input type="tel" class="form-control input-style" id="phone" name="phone" required>
-                                                        <input type="hidden"  name="isoPhone" id="isoPhone" value="">
-                                                        <input type="hidden"  name="dialPhone" id="dialPhone" value="">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label for="village">Village</label>
-                                                        <select name="village" id="village" class="input-style" style="display: none;">
-                                                            <option selected="">Categories</option>
-                                                            <option value="1">Blagounon</option>
-                                                            <option value="2">Baya</option>
-                                                            <option value="3">Gballo</option>
-                                                            <option value="4">Kasséré</option>
-                                                            <option value="5">Koffre</option>
-                                                            <option value="6">Koundin</option>
-                                                            <option value="7">Lafi</option>
-                                                            <option value="8">Landiougou</option>
-                                                            <option value="9">Nongana</option>
-                                                            <option value="10">Pinvoro</option>
-                                                            <option value="11">Tiasso</option>
-                                                            <option value="12">Toungboli</option>
-                                                            <option value="13">Tomba</option>
-                                                            <option value="14">Pongafré</option>
-                                                            <option value="15">Sienrè</option>
-                                                            <option value="16">Sionfan</option>
-                                                            <option value="17">Yelle</option>
-                                                        </select>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row pt-5">
-                                                <div class="col-md-4 offset-4 text-center">
-                                                    <button class="btn-inscript loaded w100" style="cursor:pointer"> S'inscire maintenant</button>
-                                                </div>
-                                            </div>
-                                        </form>
+<!--                                        <form method="post" id="formCarte" enctype="multipart/form-data">-->
+<!--                                            --><?php //if(!empty($errors)){ ?>
+<!--                                                <div class="alert alert-danger" style="font-size: 14px" role="alert">-->
+<!--                                                    --><?php //foreach($errors as $error){ ?>
+<!--                                                        --><?php //echo $error ?>
+<!--                                                    --><?php //}?>
+<!--                                                </div>-->
+<!--                                            --><?php //}?>
+<!---->
+<!--                                            <div class="row">-->
+<!--                                                <div class="col-12 col-sm-6">-->
+<!--                                                    <div class="form-group">-->
+<!--                                                        <label for="nom">Nom <i class="required"></i></label>-->
+<!--                                                        <input type="hidden" class="form-control " name="formkey" value="--><?//= $token ?><!--">-->
+<!--                                                        <input type="text" class="form-control input-style" id="nom" name="nom" placeholder="Nom" required/>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!---->
+<!--                                                <div class="col-12 col-sm-6">-->
+<!--                                                    <div class="form-group">-->
+<!--                                                        <label for="prenom">Prénom <i class="required"></i></label>-->
+<!--                                                        <input type="text" class="form-control input-style" id="prenom" name="prenom" placeholder="Prénom" required/>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!---->
+<!--                                            <div class="row">-->
+<!--                                                <div class="col-md-6">-->
+<!--                                                    <div class="form-group">-->
+<!--                                                        <label for="phone">Téléphone <i class="required"></i></label>-->
+<!--                                                        <input type="tel" class="form-control input-style" id="phone" name="phone" required>-->
+<!--                                                        <input type="hidden"  name="isoPhone" id="isoPhone" value="">-->
+<!--                                                        <input type="hidden"  name="dialPhone" id="dialPhone" value="">-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="col-md-6">-->
+<!--                                                    <div class="form-group">-->
+<!--                                                        <label for="village">Village</label>-->
+<!--                                                        <select name="village" id="village" class="input-style" style="display: none;">-->
+<!--                                                            <option value="1">Blagounon</option>-->
+<!--                                                            <option value="2">Baya</option>-->
+<!--                                                            <option value="3">Gballo</option>-->
+<!--                                                            <option value="4">Kasséré</option>-->
+<!--                                                            <option value="5">Koffre</option>-->
+<!--                                                            <option value="6">Koundin</option>-->
+<!--                                                            <option value="7">Lafi</option>-->
+<!--                                                            <option value="8">Landiougou</option>-->
+<!--                                                            <option value="9">Nongana</option>-->
+<!--                                                            <option value="10">Pinvoro</option>-->
+<!--                                                            <option value="11">Tiasso</option>-->
+<!--                                                            <option value="12">Toungboli</option>-->
+<!--                                                            <option value="13">Tomba</option>-->
+<!--                                                            <option value="14">Pongafré</option>-->
+<!--                                                            <option value="15">Sienrè</option>-->
+<!--                                                            <option value="16">Sionfan</option>-->
+<!--                                                            <option value="17">Yelle</option>-->
+<!--                                                        </select>-->
+<!---->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <div class="row pt-5">-->
+<!--                                                <div class="col-md-4 offset-4 text-center">-->
+<!--                                                    <button class="btn-inscript loaded w100" style="cursor:pointer"> S'inscire maintenant</button>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </form>-->
                                     </div>
                                 </div>
                             </div>

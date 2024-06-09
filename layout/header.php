@@ -438,6 +438,25 @@ ul.list{
     display: none !important;
 }
 
+.mb-70{
+    margin-bottom: 70px !important;
+}
+
+legend{
+    font-size: 20px !important;
+    font-weight: bold !important;
+}
+label{
+    font-weight: inherit !important;
+}
+
+
+
+
+
+
+
+
 
 @media(max-width: 767px) {
     .offset-4, .offset-3, .offset-6 {
@@ -477,10 +496,11 @@ ul.list{
                                 <li class="nav-item"><a class="nav-link" href="<?=$domaine_principal?>/">Accueil</a></li>
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/actualites/">Actualité</a></li>
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/courses/">Formation</a></li>
-                                <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/sortie-detente-2024/">Sortie détente</a></li>
+<!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/sortie-detente-2024/">Sortie détente</a></li>-->
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/contact/">Contact</a></li>
-                                <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/galerie/">Galerie</a></li>
-                                <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/reunion/">Réunion</a></li>
+<!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine_principal?><!--/galerie/">Galerie</a></li>-->
+                                <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/miss-inscription/">Miss 2024</a></li>
+<!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/reunion/">Réunion</a></li>-->
 
                             </ul>
                         </div>
