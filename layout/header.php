@@ -52,6 +52,15 @@
     padding: 15px;
 }
 
+#bg_1{
+    background-image: url(<?=$asset?>/media/miss1.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    padding: 100px 0;
+    z-index: 1;
+}
+
 #bg1{
     background-image: url(<?=$asset?>/media/r2.jpg);
     background-size: cover;
@@ -495,11 +504,11 @@ label{
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item"><a class="nav-link" href="<?=$domaine_principal?>/">Accueil</a></li>
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/actualites/">Actualité</a></li>
-                                <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/courses/">Formation</a></li>
-<!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/sortie-detente-2024/">Sortie détente</a></li>-->
-                                <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/contact/">Contact</a></li>
-<!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine_principal?><!--/galerie/">Galerie</a></li>-->
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/miss-inscription/">Miss 2024</a></li>
+                                <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/courses/">Formation</a></li>
+                                <!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/sortie-detente-2024/">Sortie détente</a></li>-->
+                                <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/contact/">Contact</a></li>
+                                <!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine_principal?><!--/galerie/">Galerie</a></li>-->
 <!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/reunion/">Réunion</a></li>-->
 
                             </ul>

@@ -6,15 +6,16 @@ class Miss {
 
     // Read
 
-    public function addMiss($date_miss,$nom,$phone,$village){
-        $query = "INSERT INTO miss(date_miss,nom,phone,village)
-            VALUES (:date_miss,:nom,:phone,:village)";
+    public function addMiss($date_miss,$nom,$phone,$village,$slug){
+        $query = "INSERT INTO miss(date_miss,nom,phone,village,slug)
+            VALUES (:date_miss,:nom,:phone,:village,:slug)";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
             "date_miss" => $date_miss,
             "nom" => $nom,
             "phone" => $phone,
-            "village" => $village
+            "village" => $village,
+            "slug" => $slug
         ));
 
         $nb = $rs->rowCount();

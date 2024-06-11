@@ -21,7 +21,7 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
         $slug = $slug.'-'.$nbSlug;
     }
 
-   $save = $miss->addMiss($dateGmt,$nom,$phone,$village);
+   $save = $miss->addMiss($dateGmt,$nom,$phone,$village,$slug);
    if($save > 0){
        $data = $miss->getMissById($save)->fetch();
 

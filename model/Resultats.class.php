@@ -5,14 +5,15 @@ class Resultats {
     }
 
 
-    public function addReponse($miss_id,$q_id,$rep_id){
-        $query = "INSERT INTO resultats(miss_id,q_id,rep_id)
-            VALUES (:miss_id,:q_id,:rep_id)";
+    public function addReponse($miss_id,$q_id,$rep_id,$not_es){
+        $query = "INSERT INTO resultats(miss_id,q_id,rep_id,not_es)
+            VALUES (:miss_id,:q_id,:rep_id,:not_es)";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
             "miss_id" => $miss_id,
             "q_id" => $q_id,
-            "rep_id" => $rep_id
+            "rep_id" => $rep_id,
+            "not_es" => $not_es
         ));
 
         $nb = $rs->rowCount();

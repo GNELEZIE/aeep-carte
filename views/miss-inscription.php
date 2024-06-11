@@ -9,7 +9,7 @@ $_SESSION['myformkey'] = $token;
 
 include_once $layout.'/header.php';
 ?>
-<section id="bg1">
+<section id="bg_1">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 m-auto text-center">

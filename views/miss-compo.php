@@ -47,7 +47,7 @@ include_once $layout.'/header.php';
                                                     while($getRepData = $getRep->fetch()){
                                                     ?>
                                                     <div class="form-group">
-                                                        <input type="checkbox" class="text-left" id="rp<?=$getRepData['id_reponses']?>" name="<?=$getRepData['id_reponses']?>_rp_<?=$getRepData['id_reponses']?>">
+                                                        <input type="checkbox" class="text-left" id="rp<?=$getRepData['id_reponses']?>" name="<?=$qData['id_questions']?>_rp_<?=$getRepData['id_reponses']?>" value="<?=$getRepData['point']?>">
                                                         <label for="rp<?=$getRepData['id_reponses']?>"><?= html_entity_decode(stripslashes($getRepData['reponse_s']))?></label>
                                                     </div>
                                                     <?php
