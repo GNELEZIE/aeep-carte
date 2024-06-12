@@ -15,7 +15,14 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
 
         }
     }
-    header('location:' .$domaine.'/merci');
+
+    $save = $miss->addMiss($dateGmt,$_SESSION['suivant']['nom'],$_SESSION['suivant']['phone'],$_SESSION['suivant']['village'],$_SESSION['suivant']['slug']);
+    if($save > 0){
+        header('location:' .$domaine.'/merci');
+    }else{
+        $error_m['register'] = 'Une erreur s\'est produite, veuillez réessayer.';
+    }
+
 
 
 

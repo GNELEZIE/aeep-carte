@@ -1,6 +1,6 @@
 <?php
 
-unset($_SESSION['compo']);
+unset($_SESSION['suivant']);
 
 include_once $layout.'/header.php';
 ?>

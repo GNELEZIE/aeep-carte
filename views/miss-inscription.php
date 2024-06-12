@@ -32,9 +32,9 @@ include_once $layout.'/header.php';
                                 <h3 class="text-center">Inscription</h3>
                                 <div class="register-form">
                                     <form method="post" id="formMiss">
-                                        <?php if(!empty($errors)){ ?>
+                                        <?php if(!empty($error_m)){ ?>
                                             <div class="alert alert-danger" style="font-size: 14px" role="alert">
-                                                <?php foreach($errors as $error){ ?>
+                                                <?php foreach($error_m as $error){ ?>
                                                     <?php echo $error ?>
                                                 <?php }?>
                                             </div>

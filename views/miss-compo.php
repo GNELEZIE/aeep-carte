@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['compo'])){
+if(!isset($_SESSION['suivant'])){
     header('location:'.$domaine.'/miss-inscription');
     exit();
 }
