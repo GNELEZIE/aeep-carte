@@ -36,12 +36,14 @@ include_once $layout.'/header.php';
                                         <div class="row mt-3">
                                             <div class="col-md-12">
                                                 <?php
+                                                $n_um = 0;
                                                 $qs = $questions->getAllQuestion();
                                                 while($qData = $qs->fetch()){
+                                                    $n_um ++;
                                                     array_push($tabQ,$qData['id_questions']);
                                                 ?>
                                                 <fieldset class="" style="border: 3px dashed #ececf6; padding: inherit; margin-bottom: 10px">
-                                                    <legend><?= html_entity_decode(stripslashes($qData['quest_t']))?></legend>
+                                                    <legend><?= $n_um.' - '. html_entity_decode(stripslashes($qData['quest_t']))?></legend>
                                                     <?php
                                                     $getRep = $reponses->getRepByQuId($qData['id_questions']);
                                                     while($getRepData = $getRep->fetch()){
@@ -58,13 +60,8 @@ include_once $layout.'/header.php';
                                                 }
                                                 $_SESSION['ques'] = $tabQ;
                                                 ?>
-
                                             </div>
-
                                         </div>
-
-
-
                                         <div class="row mt-3">
                                             <div class="col-md-4 offset-4 text-center">
                                                 <input type="hidden" class="form-control " name="formkey" value="<?= $token ?>">

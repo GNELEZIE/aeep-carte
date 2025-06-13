@@ -30,6 +30,7 @@ include_once $layout.'/header.php';
                         <div class="register-form-content">
                             <div class="reunion-form-wrap pt-1">
                                 <h3 class="text-center">Inscription</h3>
+<!--                                <div class="alert alert-info">Mise à jour en cours, veuillez patienter <i class="fa fa-spinner fa-spin" aria-hidden="true"></i></div>-->
                                 <div class="register-form">
                                     <form method="post" id="formMiss">
                                         <?php if(!empty($error_m)){ ?>
@@ -61,7 +62,6 @@ include_once $layout.'/header.php';
                                             <div class="form-group">
                                                 <label for="village">Village</label>
                                                 <select name="village" id="village" class="input-style" style="display: none;">
-                                                    <option selected="">Categories</option>
                                                     <option value="1">Blagounon</option>
                                                     <option value="2">Baya</option>
                                                     <option value="3">Gballo</option>

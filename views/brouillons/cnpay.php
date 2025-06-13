@@ -4,7 +4,7 @@
         <title>CinetPay-SDK-PHP</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-        <link rel="stylesheet" href="../function/cinetpay/src/interface.css">
+        <link rel="stylesheet" href="../../function/cinetpay/src/interface.css">
     </head>
 
   <body>
@@ -13,7 +13,7 @@
             <div class="col-sm-12">
                 <div class="card mx-auto">
                     <p class="heading">EXEMPLE INTEGRATION PHP</p>
-                    <form action="../function/cinetpay/action.php" method="post" class="card-details ">
+                    <form action="../../function/cinetpay/action.php" method="post" class="card-details ">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group mb-0">

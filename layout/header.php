@@ -38,13 +38,25 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
 }
 #page-title-area1 {
-    background: linear-gradient(0deg, rgb(0 0 0 / 40%), rgb(13 12 13 / 61%)), url('<?=$asset?>/media/bv.jpg');
+    background: linear-gradient(0deg, rgb(0 0 0 / 40%), rgb(13 12 13 / 61%)), url('<?=$asset?>/media/es.jpg');
     background-size: cover;
     background-position: center center;
     position: relative;
     padding: 100px 0;
     z-index: 1;
 }
+
+
+#page-title-area {
+    background-image: url(../img/page-title.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    padding: 100px 0;
+    z-index: 1;
+}
+
+
 .register-form-content .reunion-form-wrap:before{
 
 }
@@ -100,6 +112,18 @@ ul.list{
     border-radius: 6px;
     padding: 5px 20px;
     color: #fff;
+}
+.btn-mise-a-jour{
+    background: #008000;
+    border: 1px solid #008000 !important;
+    border-radius: 6px;
+    padding: 5px 20px;
+    color: #fff;
+}
+.btn-mise-a-jour:hover{
+    background: #fff;
+    border: 1px solid #008000 !important;
+    color: #008000;
 }
 .btn-inscript:hover{
     background: #fff;
@@ -248,7 +272,7 @@ ul.list{
     margin-right: 0 !important;
 }
 #header-area .header-bottom-area.fixed .navbar-brand img, #header-area .header-bottom-area .main-menu .navbar-brand img {
-    width: 150px !important;
+    width: 70px !important;
 }
 #footer-area .footer-widget .single-widget-wrap .footer-about p {
     color: #F5F5F5 !important;
@@ -459,8 +483,20 @@ label{
     font-weight: inherit !important;
 }
 
+.register-page-inner1
+{
+    -webkit-box-shadow: 0 3px 30px 0 rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 3px 30px 0 rgba(0,0,0,.1);
+    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, .1);
+    padding: 10px 0 10px;
+}
 
-
+.border-left-green{
+    border-left: 8px solid #008000;
+}
+.border-left-orange{
+    border-left: 8px solid #ff4500;
+}
 
 
 
@@ -493,8 +529,8 @@ label{
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="main-menu navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="<?=$domaine_principal?>">
-                            <img src="<?=$asset?>/media/LogoAeep.png" alt="Logo" />
+                        <a class="navbar-brand" href="<?=$domaine?>">
+                            <img src="<?=$asset?>/media/aeep.png" alt="Logo" />
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menucontent" aria-controls="menucontent" aria-expanded="false">
                             <span class="navbar-toggler-icon"></span>
@@ -502,13 +538,13 @@ label{
 
                         <div class="collapse navbar-collapse" id="menucontent">
                             <ul class="navbar-nav ml-auto">
-                                <li class="nav-item"><a class="nav-link" href="<?=$domaine_principal?>/">Accueil</a></li>
-                                <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/actualites/">Actualité</a></li>
-                                <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/miss-inscription/">Miss 2024</a></li>
-                                <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/courses/">Formation</a></li>
+                                <li class="nav-item"><a class="nav-link" href="<?=$domaine?>/">Accueil</a></li>
+                                <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/enrolement">Enrolement</a></li>
+                                <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/nouvelle-inscription">Nouvealle demande</a></li>
+<!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/courses/">Formation</a></li>-->
                                 <!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/sortie-detente-2024/">Sortie détente</a></li>-->
-                                <li class="nav-item "><a class="nav-link" href="<?=$domaine_principal?>/contact/">Contact</a></li>
-                                <!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine_principal?><!--/galerie/">Galerie</a></li>-->
+                                <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/contact/">Contact</a></li>
+                                <!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/galerie/">Galerie</a></li>-->
 <!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/reunion/">Réunion</a></li>-->
 
                             </ul>

@@ -7,7 +7,7 @@ $doc = explode('/',$slug);
 $lien = $doc[0];
 
 if($lien =='' || $lien =='index'){
-    $lien = 'inscription';
+    $lien = 'index';
     $page = '';
 }else{
     $page = $lien;

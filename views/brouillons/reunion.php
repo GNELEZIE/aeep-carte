@@ -1,6 +1,6 @@
 <?php
 
-require_once $controller.'/reunion.inscription.php';
+require_once $controller.'/reunion.index.php';
 
 $countryCode = 'CI';
 $token = openssl_random_pseudo_bytes(16);

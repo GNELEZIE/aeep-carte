@@ -6,10 +6,9 @@ include_once $layout.'/header.php';
 ?>
 
 
-<section id="page-content-wrap" style="background: #e8f6ff">
-    <div class="register-page-wrapper" style="padding: 45px 0;">
-        <div class="container">
-            <div class="row">
+<section style="background: #e8f6ff">
+        <div class="container pb-5">
+            <div class="row pb-5" style="padding-top: 85px !important;">
                 <div class="col-lg-6 offset-3">
                     <div class="register-page-inner pt-2 pb-2" style="background: #ffffff;border-radius: 9px;">
                         <div class="register-form-content">
@@ -27,7 +26,6 @@ include_once $layout.'/header.php';
                 </div>
             </div>
         </div>
-    </div>
 </section>
 <?php include_once $layout.'/footer.php';?>
 

@@ -19,8 +19,8 @@
                         <div class="widgei-body">
                             <ul class="footer-list clearfix">
                                 <li><a href="https://aeep-pongala.com/contact/">Contact</a> </li>
-                                <li><a href="https://aeep-pongala.com/blog/">Actualité</a> </li>
-                                <li><a href="https://aeep-pongala.com/galerie/">Galerie</a> </li>
+<!--                                <li><a href="https://aeep-pongala.com/blog/">Actualité</a> </li>-->
+<!--                                <li><a href="https://aeep-pongala.com/galerie/">Galerie</a> </li>-->
 
                             </ul>
                         </div>
@@ -51,7 +51,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="footer-bottom-text">
-                        <p>Copyright © AEEP 2022. Design and Development by  <a href="tel:0546859936" class="text-orange"> Gnelezie Ouattara</a> </p>
+                        <p>Copyright © AEEP 2025. Design and Development by  <a href="https://tera-visions.com/" class="text-orange" target="_blank"> Téra vision </a> </p>
                     </div>
                 </div>
             </div>
