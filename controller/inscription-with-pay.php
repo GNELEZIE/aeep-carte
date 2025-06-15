@@ -30,6 +30,7 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
     $propriete6 ='trans_id';
     $etatValid = 1;
     $etatInValid = 2;
+    $demande = 1;
 
     $amount = 100;
     $currency = 'XOF';
@@ -75,7 +76,7 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
     if($verifPhone->rowCount() > 0 and $rsSlug['etat'] == 1){
         $errors['cart'] = 'Ce numéro est déjà inscrit pour la carte de membre AEEP !';
     }else{
-        $save = $carte->addCarte($dateGmt,$genre,$nom,$prenom,$slug,$dateNais,$lieu,$isoPhone,$dialPhone,$phone,$niveau,$village,$piece,$photo);
+        $save = $carte->addCarte($dateGmt,$genre,$nom,$prenom,$slug,$dateNais,$lieu,$isoPhone,$dialPhone,$phone,$niveau,$village,$piece,$photo,$demande);
         if($save >0){
 
             $commande = new Commande();

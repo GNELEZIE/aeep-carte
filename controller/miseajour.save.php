@@ -42,7 +42,7 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
     }
 
     $extensionValide = array('jpeg', 'jpg', 'png');
-    $piece_ext = explode('.',$_FILES['piece']['name']);
+    $piece_ext = explode('.',$_FILES['photo']['name']);
     $piece_ext = strtolower(end($piece_ext));
 
 
@@ -60,7 +60,7 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
     if($verifPhone->rowCount() > 0 and $rsSlug['etat'] == 1){
         $errors['cart'] = 'Ce numéro est déjà inscrit pour la carte de membre AEEP !';
     }else{
-        $save = $carte->udpCarte($dateGmt,$nom,$prenom,$slug,$isoPhone,$dialPhone,$phone,$village,$photo);
+        $save = $carte->udpCarte($dateGmt,$nom,$prenom,$slug,$isoPhone,$dialPhone,$phone,$village,$photo,1);
         if($save >0){
             header('location:' .$domaine.'/succes');
         }

@@ -8,7 +8,7 @@
 <meta name="description" content="simple description for your site"/>
 <meta name="keywords" content="keyword1, keyword2"/>
 <meta name="author" content="Gnelezie"/>
-<link rel="shortcut icon" type="image/x-icon"  href="<?=$asset?>/media/icons.png"/>
+<link rel="shortcut icon" type="image/x-icon"  href="<?=$asset?>/media/aeep.png"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet" />
 <link rel="stylesheet" href="<?=$asset?>/vendor/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="<?=$asset?>/vendor/navbar/bootstrap-4-navbar.css" />
@@ -539,11 +539,11 @@ label{
                         <div class="collapse navbar-collapse" id="menucontent">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item"><a class="nav-link" href="<?=$domaine?>/">Accueil</a></li>
-                                <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/enrolement">Enrolement</a></li>
+                                <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/mise-a-jour">Mis à jour</a></li>
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/nouvelle-inscription">Nouvealle demande</a></li>
-<!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/courses/">Formation</a></li>-->
+                                <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/verify">Vérifier</a></li>
                                 <!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/sortie-detente-2024/">Sortie détente</a></li>-->
-                                <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/contact/">Contact</a></li>
+<!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/contact/">Contact</a></li>-->
                                 <!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/galerie/">Galerie</a></li>-->
 <!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/reunion/">Réunion</a></li>-->
 

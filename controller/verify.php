@@ -15,9 +15,11 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
     $verifPhone = $carte->verifPhone($propriete1,$isoPhone,$propriete2,$dialPhone,$propriete3,$phone);
 
     if($data = $verifPhone->fetch()){
+        unset( $_SESSION['no_result']);
         $_SESSION['result'] = $data;
         header('location:'.$domaine.'/resultat');
     }else{
+        unset( $_SESSION['result']);
         $tab = array(
             'phone' => $phone
         );

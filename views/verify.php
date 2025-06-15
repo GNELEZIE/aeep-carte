@@ -17,7 +17,7 @@ include_once $layout.'/header.php';
                         <div class="col-lg-10 m-auto">
                             <div class="register-form-content">
 <!--                                <img src="--><?//=$asset?><!--/media/sss.png" class="w87" alt=""/>-->
-                                <p class="text-center">Entrer votre numéro de téléphone pour verifier la disponiblité de votre carte de membre AEEP !</p>
+                                <p class="text-center">Entrez votre numéro de téléphone pour vérifier si vous êtes sur la liste des membres de l'AEEP !</p>
                                 <form method="post" id="formVerify">
                                     <div class="row">
                                         <div class="col-md-12">
@@ -30,9 +30,6 @@ include_once $layout.'/header.php';
                                             </div>
                                         </div>
                                     </div>
-
-
-
                                     <div class="row">
                                         <div class="col-md-12 text-center">
                                             <button class="btn-inscript loadVerif w100" style="cursor:pointer"> Verifier maintenant</button>

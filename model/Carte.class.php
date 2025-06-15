@@ -34,9 +34,9 @@ class Carte {
 
 
 
-    public function udpCarte($date_carte,$nom,$prenom,$slug,$iso_phone,$dial_phone,$phone,$village,$piece){
-        $query = "INSERT INTO carte(date_carte,nom,prenom,slug,iso_phone,dial_phone,phone,village,piece)
-            VALUES (:date_carte,:nom,:prenom,:slug,:iso_phone,:dial_phone,:phone,:village,:piece)";
+    public function udpCarte($date_carte,$nom,$prenom,$slug,$iso_phone,$dial_phone,$phone,$village,$photo,$statut){
+        $query = "INSERT INTO carte(date_carte,nom,prenom,slug,iso_phone,dial_phone,phone,village,photo,statut)
+            VALUES (:date_carte,:nom,:prenom,:slug,:iso_phone,:dial_phone,:phone,:village,:photo,:statut)";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
             "date_carte" => $date_carte,
@@ -47,7 +47,8 @@ class Carte {
             "dial_phone" => $dial_phone,
             "phone" => $phone,
             "village" => $village,
-            "piece" => $piece,
+            "photo" => $photo,
+            "statut" => $statut
         ));
         $nb = $rs->rowCount();
         if($nb > 0){
@@ -58,9 +59,9 @@ class Carte {
 
 
 
-    public function addCarte($date_carte,$genre,$nom,$prenom,$slug,$date_nais,$lieu_nais,$iso_phone,$dial_phone,$phone,$niveau,$village,$piece,$photo){
-        $query = "INSERT INTO carte(date_carte,genre,nom,prenom,slug,date_nais,lieu_nais,iso_phone,dial_phone,phone,niveau,village,piece,photo)
-            VALUES (:date_carte,:genre,:nom,:prenom,:slug,:date_nais,:lieu_nais,:iso_phone,:dial_phone,:phone,:niveau,:village,:piece,:photo)";
+    public function addCarte($date_carte,$genre,$nom,$prenom,$slug,$date_nais,$lieu_nais,$iso_phone,$dial_phone,$phone,$niveau,$village,$piece,$photo,$demande){
+        $query = "INSERT INTO carte(date_carte,genre,nom,prenom,slug,date_nais,lieu_nais,iso_phone,dial_phone,phone,niveau,village,piece,photo,demande)
+            VALUES (:date_carte,:genre,:nom,:prenom,:slug,:date_nais,:lieu_nais,:iso_phone,:dial_phone,:phone,:niveau,:village,:piece,:photo,:demande)";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
             "date_carte" => $date_carte,
@@ -76,7 +77,8 @@ class Carte {
             "niveau" => $niveau,
             "village" => $village,
             "piece" => $piece,
-            "photo" => $photo
+            "photo" => $photo,
+            "demande" => $demande
         ));
         $nb = $rs->rowCount();
         if($nb > 0){
@@ -132,6 +134,17 @@ class Carte {
     public function verifPhoneSortie($val1){
 
         $query = "SELECT * FROM sortie WHERE phone = :val1";
+        $rs = $this->bdd->prepare($query);
+        $rs->execute(array(
+            "val1" => $val1
+        ));
+
+        return $rs;
+    }
+
+    public function getMembreByPhone($val1){
+
+        $query = "SELECT * FROM carte WHERE phone = :val1";
         $rs = $this->bdd->prepare($query);
         $rs->execute(array(
             "val1" => $val1
