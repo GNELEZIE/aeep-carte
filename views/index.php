@@ -36,8 +36,8 @@ include_once $layout.'/header.php';
                 <div class="col-lg-6 mb-3">
                     <div class="register-page-inner1 border-left-orange">
                         <div class="col-lg-10 m-auto">
-                            <div class="register-form-content">
-                                <h3>Renouvellement</h3>
+                            <div class="register-form-content  pb-2">
+                                <h3 class="font-m">Renouvellement</h3>
                                 <p>Pour ceux qui ont déjà une carte de membre AEEP, veuillez mettre à jour vos informations <b>gratuitement</b> en cliquant sur le bouton ci-dessous.</p>
                                 <a href="<?= $domaine ?>/mise-a-jour" class="btn-inscript">Mise à jour</a>
                             </div>
@@ -47,8 +47,8 @@ include_once $layout.'/header.php';
                 <div class="col-lg-6 mb-3">
                     <div class="register-page-inner1 border-left-green">
                         <div class="col-lg-10 m-auto">
-                            <div class="register-form-content">
-                                <h3>Nouvelle inscription</h3>
+                            <div class="register-form-content pb-2">
+                                <h3 class="font-m">Nouvelle inscription</h3>
                                 <p class="mb-0">Pour ceux qui n'ont pas de carte de membre AEEP, veuillez vous inscrire en cliquant sur le bouton ci-dessous.</p>
                               <p class="mt-0 pt-0 text-danger"> <b> NB : La carte membre AEEP coût 1 000f</b></p>
                                 <a href="<?=$domaine?>/nouvelle-inscription" class="btn-mise-a-jour">Inscription</a>

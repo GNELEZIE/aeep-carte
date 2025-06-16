@@ -32,7 +32,7 @@ if(isset($_SESSION['myformkey']) and isset($_POST['formkey']) and $_SESSION['myf
     $etatInValid = 2;
     $demande = 1;
 
-    $amount = 100;
+    $amount = 1100;
     $currency = 'XOF';
     $description = 'La carte de membre AEEP';
 

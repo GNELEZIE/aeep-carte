@@ -5,9 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>AEEP - <?=ucfirst($page)?></title>
-<meta name="description" content="simple description for your site"/>
-<meta name="keywords" content="keyword1, keyword2"/>
-<meta name="author" content="Gnelezie"/>
+<meta name="description" content="Association des Élèves et Etudiants du Pongala"/>
+<meta name="keywords" content="Pongala, Kasséré, Téra Vision"/>
+<meta name="author" content="Ouattara Gnelezie Arouna "/>
+<meta name="author" content="Téra Vision"/>
 <link rel="shortcut icon" type="image/x-icon"  href="<?=$asset?>/media/aeep.png"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet" />
 <link rel="stylesheet" href="<?=$asset?>/vendor/bootstrap/css/bootstrap.min.css" />
@@ -38,7 +39,7 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
 }
 #page-title-area1 {
-    background: linear-gradient(0deg, rgb(0 0 0 / 40%), rgb(13 12 13 / 61%)), url('<?=$asset?>/media/es.jpg');
+    background: linear-gradient(0deg, rgb(0 0 0 / 40%), rgb(13 12 13 / 61%)), url('<?=$asset?>/media/ban.jpg');
     background-size: cover;
     background-position: center center;
     position: relative;
@@ -516,6 +517,14 @@ label{
         text-align: center !important;
         line-height: 1.3 !important;
     }
+
+    .font-m{
+        font-size: 21px !important;
+        line-height: 1.5 !important;
+    }
+
+
+
 
 }
 
