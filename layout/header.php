@@ -502,6 +502,110 @@ label{
 }
 
 
+/*// Boutique*/
+
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.product-box {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.product-box:hover {
+    transform: translateY(-5px);
+}
+
+.product-box img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-box .content {
+    padding: 1rem;
+}
+
+.product-box h3 {
+    margin: 0.5rem 0;
+    color: #fcc101;
+}
+
+.price {
+    color: #28a745;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    background-color: #008000;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #008000;
+}
+.cover169{
+    object-fit: cover;
+    height: 169px;
+}
+
+.form-box{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.quantity-wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 150px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.qty-btn {
+    background-color: #008000;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.qty-btn:hover {
+    background-color: #008000;
+}
+
+.qty-input {
+    width: 50px;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    height: 40px;
+}
+
+
+
 
 
 
@@ -553,6 +657,7 @@ label{
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/mise-a-jour">Mis à jour</a></li>
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/nouvelle-inscription">Nouvealle demande</a></li>
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/verify">Vérifier</a></li>
+                                <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/boutique">Boutique</a></li>
                                 <!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/sortie-detente-2024/">Sortie détente</a></li>-->
 <!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/contact/">Contact</a></li>-->
                                 <!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/galerie/">Galerie</a></li>-->
