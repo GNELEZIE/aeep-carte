@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="google-adsense-account" content="ca-pub-6245556878555982">
 <title>AEEP - <?=ucfirst($page)?></title>
 <meta name="description" content="Association des Élèves et Etudiants du Pongala"/>
 <meta name="keywords" content="Pongala, Kasséré, Téra Vision"/>
@@ -28,8 +29,9 @@
 <link rel="stylesheet" href="<?=$asset?>/plugins/ani/animate.css"/>
 <link rel="stylesheet" href="<?=$asset?>/plugins/intltelinput/css/intlTelInput.min.css"/>
 <link rel="stylesheet" href="<?=$asset?>/plugins/bootstrap-datepicker/css/datepicker.css" type="text/css"/>
-<script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
-
+<!--<script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6245556878555982"
+        crossorigin="anonymous"></script>
 <style>
 .mydate{
     background: #ff4500;

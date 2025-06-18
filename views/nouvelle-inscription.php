@@ -186,6 +186,18 @@ include_once $layout.'/header.php';
             </div>
         </div>
     </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6245556878555982"
+            crossorigin="anonymous"></script>
+    <!-- AEEP 2 -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6245556878555982"
+         data-ad-slot="8442423149"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 </section>
 <?php include_once $layout.'/footer.php';?>
 
