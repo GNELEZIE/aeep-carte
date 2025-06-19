@@ -1,11 +1,5 @@
 <?php
-//$myIp =  Detect::ip();
-//$result = json_decode(getDataByUrl('http://ip-api.com/json/'.$myIp),true);
-//if($result['status'] == 'success'){
-//    $countryCode = $result['countryCode'];
-//}else{
-//    $countryCode = '';
-//}
+
 $countryCode = 'CI';
 require_once $controller.'/inscription-with-pay.php';
 $token = openssl_random_pseudo_bytes(16);
@@ -29,53 +23,40 @@ include_once $layout.'/header.php';
     <div class="register-page-wrapper section-padding">
         <div class="container">
             <div class="product-grid">
-                <!-- Produit 1 -->
+
+                <?php
+                $prod = $produit->getAllProduct();
+
+                while($dataprod = $prod->fetch()){
+                ?>
                 <div class="product-box">
-                    <img src="<?=$asset?>/media/02.png" alt="Tee-shirt AEEP">
+                    <img src="<?=$asset?>/media/<?=html_entity_decode(stripslashes($dataprod['photo_p']))?>" class="bg-product" alt="<?=html_entity_decode(stripslashes($dataprod['nom']))?>">
                     <div class="content">
-                        <h3>Tee-shirt</h3>
-                        <div class="price">1500 FCFA</div>
-                        <a class="btn" href="<?=$domaine?>/commander">Commander</a>
+                        <h3><?=html_entity_decode(stripslashes($dataprod['nom']))?></h3>
+                        <div class="price"><?=number_format($dataprod['prix'],0 ,' ',' ')?> FCFA</div>
+                        <a class="btn" href="<?=$domaine?>/commander/<?=html_entity_decode(stripslashes($dataprod['slug']))?>"> <i class="fa fa-shopping-bag"></i> Acheter</a>
                     </div>
                 </div>
 
-                <!-- Produit 2 -->
-                <div class="product-box">
-                    <img src="<?=$asset?>/media/02.png" alt="Polo AEEP">
-                    <div class="content">
-                        <h3>Polo</h3>
-                        <div class="price">2 500 FCFA</div>
-                        <a class="btn" href="<?=$domaine?>/commander">Commander</a>
-                    </div>
-                </div>
+                <?php
+                }
+                ?>
 
-                <!-- Produit 3 -->
-                <div class="product-box">
-                    <img src="<?=$asset?>/media/02.png" alt="Casquette AEEP">
-                    <div class="content">
-                        <h3>Casquette</h3>
-                        <div class="price">2000 FCFA</div>
-                        <a class="btn" href="<?=$domaine?>/commander">Commander</a>
-                    </div>
-                </div>
-
-                <!-- Produit 4 -->
 
             </div>
         </div>
     </div>
-<!--    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6245556878555982"-->
-<!--            crossorigin="anonymous"></script>-->
-<!--    <!-- AEEP 2 -->-->
-<!--    <ins class="adsbygoogle"-->
-<!--         style="display:block"-->
-<!--         data-ad-client="ca-pub-6245556878555982"-->
-<!--         data-ad-slot="8442423149"-->
-<!--         data-ad-format="auto"-->
-<!--         data-full-width-responsive="true"></ins>-->
-<!--    <script>-->
-<!--        (adsbygoogle = window.adsbygoogle || []).push({});-->
-<!--    </script>-->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6245556878555982"
+                crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-6245556878555982"
+             data-ad-slot="8442423149"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
 </section>
 <?php include_once $layout.'/footer.php';?>
 

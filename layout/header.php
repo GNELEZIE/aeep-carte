@@ -551,6 +551,7 @@ label{
 .btn {
     background-color: #008000;
     padding: 0.7rem 1.2rem;
+    color: #FFFFFF;
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -559,7 +560,8 @@ label{
 }
 
 .btn:hover {
-    background-color: #008000;
+    background-color: #009c00;
+    color: #FFFFFF;
 }
 .cover169{
     object-fit: cover;
@@ -604,8 +606,13 @@ label{
     height: 40px;
 }
 
+.bg-product{
+    background: #fac005;
+}
 
-
+.product-grid h3{
+    line-height: 1;
+}
 
 
 

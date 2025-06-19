@@ -1,4 +1,21 @@
 <?php
+
+
+if(isset($doc[1]) and !isset($doc[2])){
+
+    $prods = $produit->getProductBySlug($doc[1]);
+    if($dataprodu = $prods->fetch()){
+
+    }else{
+        header('location:'.$domaine.'/error');
+        exit();
+    }
+
+}else{
+    header('location:'.$domaine.'/error');
+    exit();
+}
+require_once $controller.'/cmd.save.php';
 $token = openssl_random_pseudo_bytes(16);
 $token = bin2hex($token);
 $_SESSION['myformkey'] = $token;
@@ -17,8 +34,8 @@ include_once $layout . '/header.php';
                     <!-- Infos personnelles -->
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="prenom">Prénom <i class="required"></i></label>
-                            <input type="text" class="form-control input-style" id="prenom" name="prenom" placeholder="Prénom" required />
+                            <label for="nom">Nom & Prénom <i class="required"></i></label>
+                            <input type="text" class="form-control input-style" id="nom" name="nom" placeholder="Nom & Prénom" required />
                         </div>
 
                         <div class="form-group">
@@ -55,12 +72,12 @@ include_once $layout . '/header.php';
 
                     <!-- Produit Tee-shirt -->
                     <div class="col-md-6 pt-3">
-                        <img src="<?= $asset ?>/media/02.png" class="cover169 mb-4" alt="Tee-shirt AEEP">
+                        <img src="<?= $asset ?>/media/<?=html_entity_decode(stripslashes($dataprodu['photo_p']))?>" class="cover169 mb-4 bg-product" alt="<?=html_entity_decode(stripslashes($dataprodu['photo_p']))?>">
                         <div class="form-group ">
-                            <h3 class="font-m">Tee-shirt (1 500 FCFA)</h3>
+                            <h3 class="font-m"><?=html_entity_decode(stripslashes($dataprodu['nom']))?> (<?=number_format($dataprodu['prix'],0 ,' ',' ')?> FCFA)</h3>
                             <div class="quantity-wrapper">
                                 <button type="button" class="qty-btn" onclick="changeQty('qte_tshirt', -1)">−</button>
-                                <input type="number" name="qte_tshirt" id="qte_tshirt" class="qty-input" min="0" value="0" onchange="updateTotal()">
+                                <input type="number" name="qte_tshirt" id="qte_tshirt" class="qty-input" min="1" value="1" onchange="updateTotal()">
                                 <button type="button" class="qty-btn" onclick="changeQty('qte_tshirt', 1)">+</button>
                             </div>
                         </div>
@@ -73,7 +90,9 @@ include_once $layout . '/header.php';
                 <div class="text-center mt-4 mb-3">
                     <h5>Total : <span id="totalPrix">0</span> FCFA</h5>
                     <input type="hidden" name="total" id="totalHidden">
-                    <button type="submit" class="btn btn-primary mt-3">Valider la commande</button>
+                    <input type="hidden" name="prod" value="<?=html_entity_decode(stripslashes($dataprodu['id_produit']))?>"/>
+                    <input type="hidden" class="form-control " name="formkey" value="<?= $token ?>">
+                    <button type="submit" class="btn btn-primary mt-3"> <span id="load_ed">Valider la commande</span> </button>
                 </div>
             </form>
         </div>
@@ -93,7 +112,7 @@ include_once $layout . '/header.php';
 
     function updateTotal() {
         const tshirt = parseInt(document.getElementById('qte_tshirt').value) || 0;
-        const total = tshirt * 1500;
+        const total = tshirt * <?=$dataprodu['prix']?>;
         document.getElementById('totalPrix').innerText = total.toLocaleString();
         document.getElementById('totalHidden').value = total;
     }
@@ -101,6 +120,10 @@ include_once $layout . '/header.php';
     updateTotal();
 </script>
 <script>
+$(document).ready(function(){
+    $('#commande-form').submit(function(e){
+        $('#load_ed').html('Validation en cours...');
+    });
     $("#phone").keyup(function () {
         this.value = this.value.replace(/\D/g, '');
     });
@@ -122,4 +145,5 @@ include_once $layout . '/header.php';
         $('#isoPhone').val(countryData["iso2"]);
         $('#dialPhone').val(countryData["dialCode"]);
     });
+})
 </script>
