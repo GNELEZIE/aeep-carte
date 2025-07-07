@@ -664,6 +664,7 @@ label{
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/nouvelle-inscription">Nouvealle demande</a></li>
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/verify">Vérifier</a></li>
                                 <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/boutique">Boutique</a></li>
+                                <li class="nav-item "><a class="nav-link" href="<?=$domaine?>/miss-inscription">MISS 2025</a></li>
                                 <!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/sortie-detente-2024/">Sortie détente</a></li>-->
 <!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/contact/">Contact</a></li>-->
                                 <!--                                <li class="nav-item "><a class="nav-link" href="--><?//=$domaine?><!--/galerie/">Galerie</a></li>-->

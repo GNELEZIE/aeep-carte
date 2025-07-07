@@ -24,25 +24,25 @@ include_once $layout.'/header.php';
         <div class="container">
             <div class="product-grid">
 
-                <h2 class="text-danger">La vente en ligne des Tee-shirts commence bientôt !!!</h2>
+<!--                <h2 class="text-danger">La vente en ligne des Tee-shirts commence bientôt !!!</h2>-->
 
-<!--                --><?php
-//                $prod = $produit->getAllProduct();
-//
-//                while($dataprod = $prod->fetch()){
-//                ?>
-<!--                <div class="product-box">-->
-<!--                    <img src="--><?//=$asset?><!--/media/--><?//=html_entity_decode(stripslashes($dataprod['photo_p']))?><!--" class="bg-product" alt="--><?//=html_entity_decode(stripslashes($dataprod['nom']))?><!--">-->
-<!--                    <div class="content">-->
-<!--                        <h3>--><?//=html_entity_decode(stripslashes($dataprod['nom']))?><!--</h3>-->
-<!--                        <div class="price">--><?//=number_format($dataprod['prix'],0 ,' ',' ')?><!-- FCFA</div>-->
-<!--                        <a class="btn" href="--><?//=$domaine?><!--/commander/--><?//=html_entity_decode(stripslashes($dataprod['slug']))?><!--"> <i class="fa fa-shopping-bag"></i> Acheter</a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!---->
-<!--                --><?php
-//                }
-//                ?>
+                <?php
+                $prod = $produit->getAllProduct();
+
+                while($dataprod = $prod->fetch()){
+                ?>
+                <div class="product-box">
+                    <img src="<?=$asset?>/media/<?=html_entity_decode(stripslashes($dataprod['photo_p']))?>" class="bg-product" alt="<?=html_entity_decode(stripslashes($dataprod['nom']))?>">
+                    <div class="content">
+                        <h3><?=html_entity_decode(stripslashes($dataprod['nom']))?></h3>
+                        <div class="price"><?=number_format($dataprod['prix'],0 ,' ',' ')?> FCFA</div>
+                        <a class="btn" href="<?=$domaine?>/commander/<?=html_entity_decode(stripslashes($dataprod['slug']))?>"> <i class="fa fa-shopping-bag"></i> Acheter</a>
+                    </div>
+                </div>
+
+                <?php
+                }
+                ?>
 
 
             </div>
