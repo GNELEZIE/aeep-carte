@@ -14,7 +14,7 @@ include_once $layout.'/header.php';
         <div class="row">
             <div class="col-lg-8 m-auto text-center">
                 <div class="page-title-content">
-                    <h1 class="h2 pt-5 text-white">MISS AEEP 2024</h1>
+                    <h1 class="h2 pt-5 text-white">MISS AEEP 2025</h1>
                 </div>
             </div>
         </div>
