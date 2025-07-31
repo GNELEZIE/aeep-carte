@@ -59,6 +59,7 @@ include_once $layout.'/header.php';
             </div>
         </div>
     </div>
+    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6245556878555982"
             crossorigin="anonymous"></script>
     <!-- AEEP 2 -->

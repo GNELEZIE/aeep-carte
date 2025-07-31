@@ -72,7 +72,6 @@ include_once $layout.'/header.php';
                                                     <div class="form-group">
                                                         <label for="village">Village</label>
                                                         <select name="village" id="village" class="input-style" style="display: none;">
-                                                            <option selected="">Categories</option>
                                                             <option value="1">Blagounon</option>
                                                             <option value="2">Baya</option>
                                                             <option value="3">Gballo</option>
